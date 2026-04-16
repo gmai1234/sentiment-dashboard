@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>투자자 심리 대시보드</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #fff; --border: rgba(0,0,0,0.07);
+    --text: #1a1a1a; --sub: #888; --muted: #bbb;
+    --fear: #1a5fb4; --neutral-c: #888780; --greed: #639922;
+    --extreme-fear: #0d3b7a; --extreme-greed: #3d6b0e;
+    --red: #e24b4a; --amber: #d4920b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+  .container { max-width: 520px; margin: 0 auto; padding: 20px 16px 40px; }
+
+  /* Header */
+  .header { margin-bottom: 24px; }
+  .header h1 { font-size: 20px; font-weight: 600; }
+  .header .sub { font-size: 13px; color: var(--sub); margin-top: 2px; }
+  .updated-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); margin-top: 8px; padding: 3px 10px; background: rgba(0,0,0,0.03); border-radius: 12px; }
+  .updated-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--greed); }
+
+  /* Section labels */
+  .section { margin-bottom: 24px; }
+  .section-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; font-weight: 500; }
+
+  /* Cards */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .cards.four { grid-template-columns: repeat(4, 1fr); }
+  .card { background: var(--card); border-radius: 14px; border: 0.5px solid var(--border); padding: 14px 16px; }
+  .card-label { font-size: 11px; color: var(--sub); margin-bottom: 4px; }
+  .card-value { font-size: 28px; font-weight: 600; line-height: 1.1; }
+  .card-value.sm { font-size: 18px; }
+  .card-sub { font-size: 12px; color: var(--sub); margin-top: 4px; }
+  .card-delta { font-size: 11px; margin-top: 3px; font-weight: 500; }
+  .card-delta.up { color: var(--greed); }
+  .card-delta.down { color: var(--fear); }
+
+  /* Gauge */
+  .gauge-wrap { background: var(--card); border-radius: 14px; border: 0.5px solid var(--border); padding: 16px 18px; margin-bottom: 14px; }
+  .gauge-bar { height: 12px; border-radius: 6px; background: linear-gradient(to right, var(--extreme-fear), var(--fear) 25%, var(--neutral-c) 50%, var(--greed) 75%, var(--extreme-greed)); position: relative; margin: 10px 0 6px; }
+  .gauge-needle { position: absolute; top: -4px; width: 4px; height: 20px; background: var(--text); border-radius: 2px; transform: translateX(-50%); transition: left 0.8s cubic-bezier(.4,0,.2,1); }
+  .gauge-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); }
+
+  /* Sub-indicators */
+  .sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .sub-item { background: var(--card); border-radius: 12px; border: 0.5px solid var(--border); padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; }
+  .sub-name { font-size: 11px; color: var(--sub); flex: 1; }
+  .sub-score { font-size: 16px; font-weight: 600; margin-left: 8px; }
+  .sub-dot { width: 7px; height: 7px; border-radius: 50%; margin-right: 7px; flex-shrink: 0; }
+
+  /* Chart */
+  .chart-wrap { background: var(--card); border-radius: 14px; border: 0.5px solid var(--border); padding: 16px 12px 10px; margin-bottom: 14px; }
+  .chart-header { display: flex; justify-content: space-between; align-items: center; padding: 0 6px; margin-bottom: 8px; }
+  .chart-tabs { display: flex; gap: 4px; }
+  .chart-tab { font-size: 11px; padding: 3px 10px; border-radius: 8px; border: none; background: transparent; color: var(--sub); cursor: pointer; font-weight: 500; }
+  .chart-tab.active { background: var(--text); color: #fff; }
+  canvas { width: 100% !important; height: 180px !important; }
+
+  /* Panel */
+  .panel { background: var(--card); border-radius: 14px; border: 0.5px solid var(--border); padding: 18px; margin-bottom: 14px; }
+  .aaii-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .aaii-row:last-child { margin-bottom: 0; }
+  .aaii-name { font-size: 12px; color: var(--sub); width: 52px; font-weight: 500; }
+  .aaii-bar-bg { flex: 1; height: 8px; background: rgba(0,0,0,0.04); border-radius: 4px; overflow: hidden; }
+  .aaii-bar-fill { height: 100%; border-radius: 4px; transition: width 0.8s cubic-bezier(.4,0,.2,1); }
+  .aaii-pct { font-size: 14px; font-weight: 600; width: 48px; text-align: right; }
+  .spread-row { margin-top: 14px; padding-top: 12px; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .spread-label { font-size: 12px; color: var(--sub); }
+  .spread-value { font-size: 14px; font-weight: 600; }
+  .spread-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 10px; border-radius: 10px; margin-left: 8px; }
+
+  /* Signal */
+  .signal-box { border-radius: 14px; padding: 16px 18px; font-size: 14px; line-height: 1.6; transition: all 0.4s ease; background: rgba(0,0,0,0.03); color: var(--sub); }
+  .signal-title { font-weight: 600; margin-bottom: 4px; font-size: 13px; }
+
+  /* Divider */
+  .divider { border: none; border-top: 0.5px solid var(--border); margin: 20px 0; }
+
+  /* Footer */
+  .footer { font-size: 11px; color: var(--muted); margin-top: 20px; }
+  .footer a { color: var(--sub); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* Loading placeholder */
+  .placeholder { color: #ddd; }
+
+  /* Responsive: 4-col cards fallback on small screens */
+  @media (max-width: 420px) {
+    .cards.four { grid-template-columns: 1fr 1fr; }
+    .sub-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <h1>투자자 심리 대시보드</h1>
+    <div class="sub">CNN Fear & Greed Index + AAII Sentiment Survey</div>
+    <div class="updated-badge">
+      <div class="dot" id="status-dot"></div>
+      <span id="updated-time">데이터 로딩 중...</span>
+    </div>
+  </div>
+
+  <!-- Fear & Greed: Current -->
+  <div class="section">
+    <div class="section-label">CNN Fear & Greed Index</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-label">현재 지수</div>
+        <div class="card-value" id="fg-value"><span class="placeholder">···</span></div>
+        <div class="card-sub" id="fg-label"></div>
+      </div>
+      <div class="card">
+        <div class="card-label">전일 종가</div>
+        <div class="card-value" id="fg-prev-close"><span class="placeholder">—</span></div>
+        <div class="card-sub" id="fg-prev-close-label"></div>
+      </div>
+    </div>
+    <div class="cards four">
+      <div class="card">
+        <div class="card-label">1주 전</div>
+        <div class="card-value sm" id="fg-1w"><span class="placeholder">—</span></div>
+        <div class="card-delta" id="fg-1w-delta"></div>
+      </div>
+      <div class="card">
+        <div class="card-label">1개월 전</div>
+        <div class="card-value sm" id="fg-1m"><span class="placeholder">—</span></div>
+        <div class="card-delta" id="fg-1m-delta"></div>
+      </div>
+      <div class="card">
+        <div class="card-label">1년 전</div>
+        <div class="card-value sm" id="fg-1y"><span class="placeholder">—</span></div>
+        <div class="card-delta" id="fg-1y-delta"></div>
+      </div>
+      <div class="card">
+        <div class="card-label">변동</div>
+        <div class="card-value sm" id="fg-change"><span class="placeholder">—</span></div>
+        <div class="card-sub" style="font-size:10px;">전주 대비</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gauge -->
+  <div class="gauge-wrap">
+    <div style="font-size:11px; color:var(--muted); font-weight:500;">공포 ← → 탐욕</div>
+    <div class="gauge-bar">
+      <div class="gauge-needle" id="fg-needle" style="left:50%; opacity:0.15;"></div>
+    </div>
+    <div class="gauge-labels">
+      <span>극도의 공포</span><span>공포</span><span>중립</span><span>탐욕</span><span>극도의 탐욕</span>
+    </div>
+  </div>
+
+  <!-- Sub-indicators -->
+  <div class="section">
+    <div class="section-label">구성 지표 (7개)</div>
+    <div class="sub-grid" id="sub-indicators">
+      <div class="sub-item"><span class="sub-name" style="color:#ddd;">로딩 중...</span></div>
+    </div>
+  </div>
+
+  <!-- Fear & Greed History Chart -->
+  <div class="section">
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <span class="section-label" style="margin:0;">F&G 추이</span>
+        <div class="chart-tabs" id="fg-chart-tabs">
+          <button class="chart-tab" data-days="30" onclick="drawFGChart(30)">30일</button>
+          <button class="chart-tab active" data-days="60" onclick="drawFGChart(60)">60일</button>
+          <button class="chart-tab" data-days="90" onclick="drawFGChart(90)">90일</button>
+        </div>
+      </div>
+      <canvas id="fg-chart"></canvas>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- AAII -->
+  <div class="section">
+    <div class="section-label">AAII 투자자 심리 설문</div>
+    <div class="panel">
+      <div id="aaii-content">
+        <div style="font-size:13px; color:#ddd;">로딩 중...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AAII History Chart -->
+  <div class="section">
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <span class="section-label" style="margin:0;">AAII Bull-Bear Spread 추이</span>
+      </div>
+      <canvas id="aaii-chart"></canvas>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Signal -->
+  <div class="section">
+    <div class="section-label">종합 판단</div>
+    <div id="signal-box" class="signal-box">데이터 로딩 중...</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="https://edition.cnn.com/markets/fear-and-greed" target="_blank">CNN Fear & Greed</a> ·
+    <a href="https://www.aaii.com/sentimentsurvey" target="_blank">AAII Survey</a><br>
+    GitHub Actions로 자동 업데이트 · BofA 셀사이드 지표 대리 모니터링
+  </div>
+</div>
+
+<script src="sentiment_data.js"></script>
+<script>
+// Rating helpers
+function getRatingKo(r) {
+  const m = { 'extreme fear':'극도의 공포', 'fear':'공포', 'neutral':'중립', 'greed':'탐욕', 'extreme greed':'극도의 탐욕' };
+  return m[r] || r;
+}
+function getRatingFromScore(s) {
+  if (s <= 25) return '극도의 공포';
+  if (s <= 44) return '공포';
+  if (s <= 55) return '중립';
+  if (s <= 75) return '탐욕';
+  return '극도의 탐욕';
+}
+function getRatingColor(r) {
+  const m = { 'extreme fear':'#0d3b7a', 'fear':'#1a5fb4', 'neutral':'#888780', 'greed':'#639922', 'extreme greed':'#3d6b0e' };
+  return m[r] || '#888';
+}
+function getDeltaHTML(current, prev) {
+  if (prev == null || isNaN(prev)) return '';
+  const d = current - prev;
+  const sign = d >= 0 ? '+' : '';
+  const cls = d >= 0 ? 'up' : 'down';
+  return `<div class="card-delta ${cls}">${sign}${d.toFixed(1)}</div>`;
+}
+
+// Simple canvas chart
+function drawLineChart(canvasId, datasets, labels, options = {}) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  const W = rect.width, H = rect.height;
+  const pad = { top: 10, right: 12, bottom: 24, left: 32 };
+  const cW = W - pad.left - pad.right, cH = H - pad.top - pad.bottom;
+
+  // Compute global min/max
+  let allVals = [];
+  datasets.forEach(ds => allVals.push(...ds.data));
+  let minV = options.minY ?? Math.min(...allVals);
+  let maxV = options.maxY ?? Math.max(...allVals);
+  if (minV === maxV) { minV -= 5; maxV += 5; }
+  const rangeV = maxV - minV;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Zone fills for F&G chart
+  if (options.zones) {
+    const zones = [
+      { from: 0, to: 25, color: 'rgba(13,59,122,0.06)' },
+      { from: 25, to: 45, color: 'rgba(26,95,180,0.04)' },
+      { from: 55, to: 75, color: 'rgba(99,153,34,0.04)' },
+      { from: 75, to: 100, color: 'rgba(61,107,14,0.06)' },
+    ];
+    zones.forEach(z => {
+      const y1 = pad.top + cH - ((Math.min(z.to, maxV) - minV) / rangeV) * cH;
+      const y2 = pad.top + cH - ((Math.max(z.from, minV) - minV) / rangeV) * cH;
+      if (y2 > y1) {
+        ctx.fillStyle = z.color;
+        ctx.fillRect(pad.left, y1, cW, y2 - y1);
+      }
+    });
+  }
+
+  // Zero line for spread chart
+  if (options.zeroLine && minV < 0 && maxV > 0) {
+    const y0 = pad.top + cH - ((0 - minV) / rangeV) * cH;
+    ctx.strokeStyle = 'rgba(0,0,0,0.1)';
+    ctx.lineWidth = 0.5;
+    ctx.setLineDash([4, 3]);
+    ctx.beginPath(); ctx.moveTo(pad.left, y0); ctx.lineTo(pad.left + cW, y0); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Grid lines
+  ctx.strokeStyle = 'rgba(0,0,0,0.05)';
+  ctx.lineWidth = 0.5;
+  const gridSteps = 4;
+  for (let i = 0; i <= gridSteps; i++) {
+    const y = pad.top + (cH / gridSteps) * i;
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + cW, y); ctx.stroke();
+    // Y-axis labels
+    const val = maxV - (rangeV / gridSteps) * i;
+    ctx.fillStyle = '#bbb';
+    ctx.font = '10px -apple-system, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText(Math.round(val), pad.left - 4, y + 3);
+  }
+
+  // X-axis labels
+  const n = labels.length;
+  const labelIdxs = [0, Math.floor(n / 3), Math.floor(2 * n / 3), n - 1];
+  ctx.fillStyle = '#bbb';
+  ctx.font = '10px -apple-system, sans-serif';
+  ctx.textAlign = 'center';
+  labelIdxs.forEach(i => {
+    if (i < n) {
+      const x = pad.left + (i / (n - 1)) * cW;
+      const lbl = labels[i];
+      ctx.fillText(lbl.slice(5), x, H - 4); // MM-DD
+    }
+  });
+
+  // Draw lines
+  datasets.forEach(ds => {
+    ctx.strokeStyle = ds.color;
+    ctx.lineWidth = ds.width || 1.5;
+    ctx.lineJoin = 'round';
+    if (ds.dash) ctx.setLineDash(ds.dash);
+    else ctx.setLineDash([]);
+    ctx.beginPath();
+    ds.data.forEach((v, i) => {
+      const x = pad.left + (i / (n - 1)) * cW;
+      const y = pad.top + cH - ((v - minV) / rangeV) * cH;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Area fill for first dataset if requested
+    if (ds.fill) {
+      const baseY = options.zeroLine && minV < 0 ? pad.top + cH - ((0 - minV) / rangeV) * cH : pad.top + cH;
+      ctx.fillStyle = ds.fillColor || 'rgba(0,0,0,0.03)';
+      ctx.beginPath();
+      ds.data.forEach((v, i) => {
+        const x = pad.left + (i / (n - 1)) * cW;
+        const y = pad.top + cH - ((v - minV) / rangeV) * cH;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      });
+      ctx.lineTo(pad.left + ((n - 1) / (n - 1)) * cW, baseY);
+      ctx.lineTo(pad.left, baseY);
+      ctx.closePath();
+      ctx.fill();
+    }
+  });
+
+  // End dot
+  datasets.forEach(ds => {
+    if (ds.data.length) {
+      const lastI = ds.data.length - 1;
+      const x = pad.left + (lastI / (n - 1)) * cW;
+      const y = pad.top + cH - ((ds.data[lastI] - minV) / rangeV) * cH;
+      ctx.fillStyle = ds.color;
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  });
+}
+
+// Fear & Greed chart
+let fgHistoryData = [];
+function drawFGChart(days) {
+  // Update tabs
+  document.querySelectorAll('#fg-chart-tabs .chart-tab').forEach(t => {
+    t.classList.toggle('active', parseInt(t.dataset.days) === days);
+  });
+  const sliced = fgHistoryData.slice(-days);
+  if (!sliced.length) return;
+  drawLineChart('fg-chart',
+    [{ data: sliced.map(d => d.score), color: '#1a1a1a', width: 2, fill: true, fillColor: 'rgba(0,0,0,0.03)' }],
+    sliced.map(d => d.date),
+    { minY: 0, maxY: 100, zones: true }
+  );
+}
+
+// AAII chart
+function drawAAIIChart(history) {
+  if (!history || !history.length) return;
+  drawLineChart('aaii-chart',
+    [
+      { data: history.map(d => d.spread), color: '#1a5fb4', width: 1.5, fill: true,
+        fillColor: 'rgba(26,95,180,0.06)' },
+      { data: history.map(d => d.bull_avg - d.bear_avg), color: '#e24b4a', width: 1, dash: [4, 3] },
+    ],
+    history.map(d => d.date),
+    { zeroLine: true }
+  );
+}
+
+// Render
+function render() {
+  const D = window.SENTIMENT_DATA;
+  if (!D) { document.getElementById('updated-time').textContent = '데이터 파일 없음'; return; }
+
+  // Updated time
+  if (D.updated) {
+    const dt = new Date(D.updated);
+    document.getElementById('updated-time').textContent =
+      `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')} ${String(dt.getHours()).padStart(2,'0')}:${String(dt.getMinutes()).padStart(2,'0')} UTC 기준`;
+  }
+
+  // Fear & Greed
+  const fg = D.fear_greed;
+  if (fg) {
+    const score = fg.score;
+    document.getElementById('fg-value').textContent = Math.round(score);
+    document.getElementById('fg-label').textContent = getRatingKo(fg.rating);
+    document.getElementById('fg-value').style.color = getRatingColor(fg.rating);
+
+    document.getElementById('fg-prev-close').textContent = Math.round(fg.previous_close);
+    document.getElementById('fg-prev-close-label').textContent = getRatingFromScore(fg.previous_close);
+
+    document.getElementById('fg-1w').textContent = Math.round(fg.previous_1_week);
+    document.getElementById('fg-1w-delta').innerHTML = getDeltaHTML(score, fg.previous_1_week);
+    document.getElementById('fg-1m').textContent = Math.round(fg.previous_1_month);
+    document.getElementById('fg-1m-delta').innerHTML = getDeltaHTML(score, fg.previous_1_month);
+    document.getElementById('fg-1y').textContent = Math.round(fg.previous_1_year);
+    document.getElementById('fg-1y-delta').innerHTML = getDeltaHTML(score, fg.previous_1_year);
+
+    const change = score - fg.previous_1_week;
+    const changeEl = document.getElementById('fg-change');
+    changeEl.textContent = (change >= 0 ? '+' : '') + change.toFixed(1);
+    changeEl.style.color = change >= 0 ? 'var(--greed)' : 'var(--fear)';
+
+    // Gauge
+    document.getElementById('fg-needle').style.left = score + '%';
+    document.getElementById('fg-needle').style.opacity = '1';
+
+    // Sub-indicators
+    if (fg.sub_indicators && fg.sub_indicators.length) {
+      const grid = document.getElementById('sub-indicators');
+      grid.innerHTML = fg.sub_indicators.map(si => {
+        const c = getRatingColor(si.rating);
+        return `<div class="sub-item">
+          <div class="sub-dot" style="background:${c};"></div>
+          <span class="sub-name">${si.name}</span>
+          <span class="sub-score" style="color:${c};">${Math.round(si.score)}</span>
+        </div>`;
+      }).join('');
+    }
+
+    // History chart
+    if (fg.history && fg.history.length) {
+      fgHistoryData = fg.history;
+      drawFGChart(60);
+    }
+  }
+
+  // AAII
+  const aaii = D.aaii;
+  if (aaii && aaii.latest) {
+    const { bullish, neutral, bearish, spread, date } = aaii.latest;
+    const sc = spread >= 0 ? 'var(--greed)' : 'var(--fear)';
+    const spreadBg = spread <= -20 ? '#e6f1fb' : spread >= 20 ? '#eaf3de' : 'rgba(0,0,0,0.03)';
+    const spreadTxtColor = spread <= -20 ? '#0c447c' : spread >= 20 ? '#27500a' : '#888';
+    const spreadNote = spread <= -20 ? '극단 약세 — 역발상 매수 신호' : spread >= 20 ? '극단 강세 — 과열 주의' : '중립 구간';
+
+    document.getElementById('aaii-content').innerHTML = `
+      <div style="font-size:12px;color:var(--sub);margin-bottom:12px;">기준: ${date}</div>
+      <div class="aaii-row">
+        <div class="aaii-name">Bullish</div>
+        <div class="aaii-bar-bg"><div class="aaii-bar-fill" style="width:${bullish}%;background:var(--greed);"></div></div>
+        <div class="aaii-pct" style="color:#3B6D11;">${bullish.toFixed(1)}%</div>
+      </div>
+      <div class="aaii-row">
+        <div class="aaii-name">Neutral</div>
+        <div class="aaii-bar-bg"><div class="aaii-bar-fill" style="width:${neutral}%;background:var(--neutral-c);"></div></div>
+        <div class="aaii-pct" style="color:#5F5E5A;">${neutral.toFixed(1)}%</div>
+      </div>
+      <div class="aaii-row">
+        <div class="aaii-name">Bearish</div>
+        <div class="aaii-bar-bg"><div class="aaii-bar-fill" style="width:${bearish}%;background:var(--fear);"></div></div>
+        <div class="aaii-pct" style="color:#0C447C;">${bearish.toFixed(1)}%</div>
+      </div>
+      <div class="spread-row">
+        <span class="spread-label">Bull-Bear Spread</span>
+        <div>
+          <span class="spread-value" style="color:${sc};">${spread >= 0 ? '+' : ''}${spread.toFixed(1)}%</span>
+          <span class="spread-badge" style="background:${spreadBg};color:${spreadTxtColor};">${spreadNote}</span>
+        </div>
+      </div>`;
+
+    // AAII chart
+    if (aaii.history && aaii.history.length) {
+      drawAAIIChart(aaii.history);
+    }
+  }
+
+  // Signal
+  updateSignal(fg, aaii);
+}
+
+function updateSignal(fg, aaii) {
+  const box = document.getElementById('signal-box');
+  if (!fg) return;
+
+  const score = fg.score;
+  const bear = aaii?.latest?.bearish ?? null;
+  const fe = score <= 25, ff = score <= 44;
+  const be = bear !== null && bear >= 50, bh = bear !== null && bear >= 40;
+
+  let title, msg, bg, color, border;
+  if (fe && (bear === null || be)) {
+    bg='#e6f1fb'; color='#0c447c'; border='#b5d4f4';
+    title = 'SSI Buy 레벨 가능성';
+    msg = '두 지표 모두 극단적 공포 구간. 역발상 관점에서 강한 긍정 신호. BofA 셀사이드 지표 매수 영역에 근접했을 가능성이 높습니다.';
+  } else if (ff && (bear === null || bh)) {
+    bg='#eaf3de'; color='#27500a'; border='#c0dd97';
+    title = '심리 위축 확인';
+    msg = 'Fear 구간 진입. 과거 데이터상 이후 12개월 수익률 개선 경향이 있습니다. 점진적 매수 기회를 탐색할 구간.';
+  } else if (score <= 55) {
+    bg='#f1efe8'; color='#5f5e5a'; border='#d3d1c7';
+    title = '중립 구간';
+    msg = '뚜렷한 방향성 신호 없음. 추가 관찰이 필요하며 포지션 변경은 신중해야 합니다.';
+  } else if (score <= 75) {
+    bg='#faeeda'; color='#633806'; border='#fac775';
+    title = '탐욕 구간 — 주의';
+    msg = '낙관론 우세. 밸류에이션 고평가 가능성이 있습니다. 신중한 접근 및 이익 실현 검토 권장.';
+  } else {
+    bg='#faece7'; color='#4a1b0c'; border='#f5c4b3';
+    title = '극도의 탐욕 — 경고';
+    msg = 'SSI 극단 긍정 가능성. 과거 데이터상 이후 수익률 저조 경향. 리스크 관리 및 현금 비중 확대 권장.';
+  }
+  box.style.cssText = `background:${bg};color:${color};border:0.5px solid ${border};border-radius:14px;padding:16px 18px;font-size:13px;line-height:1.7;`;
+  box.innerHTML = `<div class="signal-title">${title}</div>${msg}`;
+}
+
+// Init
+render();
+// Redraw charts on resize
+window.addEventListener('resize', () => {
+  if (fgHistoryData.length) {
+    const active = document.querySelector('#fg-chart-tabs .chart-tab.active');
+    drawFGChart(parseInt(active?.dataset.days || 60));
+  }
+  const aaii = window.SENTIMENT_DATA?.aaii;
+  if (aaii?.history?.length) drawAAIIChart(aaii.history);
+});
+</script>
+</body>
+</html>
