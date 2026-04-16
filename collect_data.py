@@ -15,9 +15,23 @@ import urllib.request
 from datetime import datetime, timezone
 
 
-def fetch_url(url, headers=None, timeout=15):
-    """Fetch URL with optional headers."""
+BROWSER_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/json,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "identity",
+    "Connection": "keep-alive",
+    "Cache-Control": "no-cache",
+}
+
+
+def fetch_url(url, headers=None, timeout=20):
+    """Fetch URL with browser-like headers to avoid bot detection."""
     req = urllib.request.Request(url)
+    # Always set browser-like headers
+    for k, v in BROWSER_HEADERS.items():
+        req.add_header(k, v)
+    # Override with any custom headers
     if headers:
         for k, v in headers.items():
             req.add_header(k, v)
@@ -30,13 +44,17 @@ def collect_fear_greed():
     print("[1/2] Fetching CNN Fear & Greed Index...")
 
     # Current score + comparisons
+    cnn_headers = {
+        "Referer": "https://edition.cnn.com/markets/fear-and-greed",
+        "Origin": "https://edition.cnn.com",
+    }
     current_url = "https://production.dataviz.cnn.io/index/fearandgreed/current"
-    raw = fetch_url(current_url, headers={"User-Agent": "Mozilla/5.0"})
+    raw = fetch_url(current_url, headers=cnn_headers)
     current = json.loads(raw)
 
     # Full data with sub-indicators
     graph_url = "https://production.dataviz.cnn.io/index/fearandgreed/graphdata"
-    raw2 = fetch_url(graph_url, headers={"User-Agent": "Mozilla/5.0"})
+    raw2 = fetch_url(graph_url, headers=cnn_headers)
     graph = json.loads(raw2)
 
     # Extract sub-indicators
@@ -92,7 +110,7 @@ def collect_aaii():
     print("[2/2] Fetching AAII Sentiment Survey...")
 
     url = "https://www.aaii.com/sentimentsurvey"
-    html = fetch_url(url, headers={"User-Agent": "Mozilla/5.0"})
+    html = fetch_url(url, headers={"Referer": "https://www.aaii.com/"})
 
     # Extract dataChart5 array (52-week history)
     match = re.search(r"var\s+dataChart5\s*=\s*(\[[\s\S]*?\]);", html)
@@ -111,7 +129,7 @@ def collect_aaii():
     precise_latest = None
     try:
         results_url = "https://www.aaii.com/sentimentsurvey/sent_results"
-        results_html = fetch_url(results_url, headers={"User-Agent": "Mozilla/5.0"})
+        results_html = fetch_url(results_url, headers={"Referer": "https://www.aaii.com/sentimentsurvey"})
         # Parse first data row from results table
         row_match = re.search(
             r'<tr[^>]*align="center"[^>]*>\s*<td[^>]*>([^<]+)</td>\s*'
