@@ -1,9 +1,9 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-04-17T09:05:43Z",
+  "updated": "2026-04-17T11:49:10Z",
   "fear_greed": {
     "score": 63.3,
     "rating": "greed",
-    "timestamp": "2026-04-17T08:47:16+00:00",
+    "timestamp": "2026-04-17T11:33:31+00:00",
     "previous_close": 62.2,
     "previous_1_week": 36.6,
     "previous_1_month": 20.7,
@@ -98,7 +98,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2025-12-24",
-        "score": 58,
+        "score": 58.0,
         "rating": "greed"
       },
       {
@@ -153,7 +153,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-01-12",
-        "score": 58,
+        "score": 58.0,
         "rating": "greed"
       },
       {
@@ -203,7 +203,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-01-27",
-        "score": 65,
+        "score": 65.0,
         "rating": "greed"
       },
       {
@@ -433,7 +433,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-04-02",
-        "score": 19,
+        "score": 19.0,
         "rating": "extreme fear"
       },
       {
