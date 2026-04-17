@@ -1,13 +1,13 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-04-16T23:06:42Z",
+  "updated": "2026-04-17T09:03:45Z",
   "fear_greed": {
-    "score": 62.2,
+    "score": 63.3,
     "rating": "greed",
-    "timestamp": "2026-04-16T22:50:34+00:00",
-    "previous_close": 56.5,
-    "previous_1_week": 37.8,
-    "previous_1_month": 20.4,
-    "previous_1_year": 11.1,
+    "timestamp": "2026-04-17T08:47:16+00:00",
+    "previous_close": 62.2,
+    "previous_1_week": 36.6,
+    "previous_1_month": 20.7,
+    "previous_1_year": 16.1,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
@@ -16,13 +16,13 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Stock Price Strength",
-        "score": 27,
+        "score": 29.6,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 53,
-        "rating": "neutral"
+        "score": 58.2,
+        "rating": "greed"
       },
       {
         "name": "Put/Call Options",
@@ -36,7 +36,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 50.8,
+        "score": 50.6,
         "rating": "neutral"
       },
       {
@@ -46,11 +46,6 @@ window.SENTIMENT_DATA = {
       }
     ],
     "history": [
-      {
-        "date": "2025-12-09",
-        "score": 40.9,
-        "rating": "fear"
-      },
       {
         "date": "2025-12-10",
         "score": 36.4,
@@ -488,18 +483,23 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-04-16",
-        "score": 62.2,
+        "score": 63.3,
         "rating": "greed"
       },
       {
-        "date": "2026-04-16",
-        "score": 62.2,
+        "date": "2026-04-17",
+        "score": 63.3,
+        "rating": "greed"
+      },
+      {
+        "date": "2026-04-17",
+        "score": 63.3,
         "rating": "greed"
       }
     ]
   },
   "aaii": null,
   "errors": [
-    "AAII collection failed: Could not find dataChart5 in AAII page"
+    "AAII collection failed: All AAII collection methods failed and no existing data"
   ]
 };
