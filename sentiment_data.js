@@ -1,5 +1,5 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-04-17T09:03:45Z",
+  "updated": "2026-04-17T09:05:43Z",
   "fear_greed": {
     "score": 63.3,
     "rating": "greed",
@@ -98,7 +98,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2025-12-24",
-        "score": 58.0,
+        "score": 58,
         "rating": "greed"
       },
       {
@@ -153,7 +153,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-01-12",
-        "score": 58.0,
+        "score": 58,
         "rating": "greed"
       },
       {
@@ -203,7 +203,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-01-27",
-        "score": 65.0,
+        "score": 65,
         "rating": "greed"
       },
       {
@@ -433,7 +433,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-04-02",
-        "score": 19.0,
+        "score": 19,
         "rating": "extreme fear"
       },
       {
@@ -498,8 +498,484 @@ window.SENTIMENT_DATA = {
       }
     ]
   },
-  "aaii": null,
-  "errors": [
-    "AAII collection failed: All AAII collection methods failed and no existing data"
-  ]
+  "aaii": {
+    "latest": {
+      "date": "2026-04-15",
+      "bullish": 31,
+      "neutral": 25,
+      "bearish": 42,
+      "spread": -11
+    },
+    "history": [
+      {
+        "date": "2025-04-23",
+        "bullish": 21,
+        "neutral": 22,
+        "bearish": 55,
+        "spread": -33,
+        "bull_avg": 21,
+        "bear_avg": 55
+      },
+      {
+        "date": "2025-04-30",
+        "bullish": 20,
+        "neutral": 19,
+        "bearish": 59,
+        "spread": -38,
+        "bull_avg": 20,
+        "bear_avg": 59
+      },
+      {
+        "date": "2025-05-07",
+        "bullish": 29,
+        "neutral": 19,
+        "bearish": 51,
+        "spread": -22,
+        "bull_avg": 29,
+        "bear_avg": 51
+      },
+      {
+        "date": "2025-05-14",
+        "bullish": 35,
+        "neutral": 19,
+        "bearish": 44,
+        "spread": -8,
+        "bull_avg": 35,
+        "bear_avg": 44
+      },
+      {
+        "date": "2025-05-21",
+        "bullish": 37,
+        "neutral": 25,
+        "bearish": 36,
+        "spread": 0,
+        "bull_avg": 37,
+        "bear_avg": 36
+      },
+      {
+        "date": "2025-05-28",
+        "bullish": 32,
+        "neutral": 25,
+        "bearish": 41,
+        "spread": -8,
+        "bull_avg": 32,
+        "bear_avg": 41
+      },
+      {
+        "date": "2025-06-04",
+        "bullish": 32,
+        "neutral": 25,
+        "bearish": 41,
+        "spread": -8,
+        "bull_avg": 32,
+        "bear_avg": 41
+      },
+      {
+        "date": "2025-06-11",
+        "bullish": 36,
+        "neutral": 29,
+        "bearish": 33,
+        "spread": 3,
+        "bull_avg": 36,
+        "bear_avg": 33
+      },
+      {
+        "date": "2025-06-18",
+        "bullish": 33,
+        "neutral": 25,
+        "bearish": 41,
+        "spread": -8,
+        "bull_avg": 33,
+        "bear_avg": 41
+      },
+      {
+        "date": "2025-06-25",
+        "bullish": 35,
+        "neutral": 24,
+        "bearish": 40,
+        "spread": -5,
+        "bull_avg": 35,
+        "bear_avg": 40
+      },
+      {
+        "date": "2025-07-02",
+        "bullish": 45,
+        "neutral": 21,
+        "bearish": 33,
+        "spread": 11,
+        "bull_avg": 45,
+        "bear_avg": 33
+      },
+      {
+        "date": "2025-07-09",
+        "bullish": 41,
+        "neutral": 22,
+        "bearish": 35,
+        "spread": 5,
+        "bull_avg": 41,
+        "bear_avg": 35
+      },
+      {
+        "date": "2025-07-16",
+        "bullish": 39,
+        "neutral": 21,
+        "bearish": 38,
+        "spread": 0,
+        "bull_avg": 39,
+        "bear_avg": 38
+      },
+      {
+        "date": "2025-07-23",
+        "bullish": 36,
+        "neutral": 29,
+        "bearish": 34,
+        "spread": 2,
+        "bull_avg": 36,
+        "bear_avg": 34
+      },
+      {
+        "date": "2025-07-30",
+        "bullish": 40,
+        "neutral": 26,
+        "bearish": 33,
+        "spread": 7,
+        "bull_avg": 40,
+        "bear_avg": 33
+      },
+      {
+        "date": "2025-08-06",
+        "bullish": 34,
+        "neutral": 21,
+        "bearish": 43,
+        "spread": -8,
+        "bull_avg": 34,
+        "bear_avg": 43
+      },
+      {
+        "date": "2025-08-13",
+        "bullish": 29,
+        "neutral": 23,
+        "bearish": 46,
+        "spread": -16,
+        "bull_avg": 29,
+        "bear_avg": 46
+      },
+      {
+        "date": "2025-08-20",
+        "bullish": 30,
+        "neutral": 24,
+        "bearish": 44,
+        "spread": -13,
+        "bull_avg": 30,
+        "bear_avg": 44
+      },
+      {
+        "date": "2025-08-27",
+        "bullish": 34,
+        "neutral": 25,
+        "bearish": 39,
+        "spread": -4,
+        "bull_avg": 34,
+        "bear_avg": 39
+      },
+      {
+        "date": "2025-09-03",
+        "bullish": 32,
+        "neutral": 23,
+        "bearish": 43,
+        "spread": -10,
+        "bull_avg": 32,
+        "bear_avg": 43
+      },
+      {
+        "date": "2025-09-10",
+        "bullish": 28,
+        "neutral": 22,
+        "bearish": 49,
+        "spread": -21,
+        "bull_avg": 28,
+        "bear_avg": 49
+      },
+      {
+        "date": "2025-09-17",
+        "bullish": 41,
+        "neutral": 15,
+        "bearish": 42,
+        "spread": 0,
+        "bull_avg": 41,
+        "bear_avg": 42
+      },
+      {
+        "date": "2025-09-24",
+        "bullish": 41,
+        "neutral": 19,
+        "bearish": 39,
+        "spread": 2,
+        "bull_avg": 41,
+        "bear_avg": 39
+      },
+      {
+        "date": "2025-10-01",
+        "bullish": 42,
+        "neutral": 17,
+        "bearish": 39,
+        "spread": 3,
+        "bull_avg": 42,
+        "bear_avg": 39
+      },
+      {
+        "date": "2025-10-08",
+        "bullish": 45,
+        "neutral": 18,
+        "bearish": 35,
+        "spread": 10,
+        "bull_avg": 45,
+        "bear_avg": 35
+      },
+      {
+        "date": "2025-10-15",
+        "bullish": 33,
+        "neutral": 20,
+        "bearish": 46,
+        "spread": -12,
+        "bull_avg": 33,
+        "bear_avg": 46
+      },
+      {
+        "date": "2025-10-22",
+        "bullish": 36,
+        "neutral": 20,
+        "bearish": 42,
+        "spread": -5,
+        "bull_avg": 36,
+        "bear_avg": 42
+      },
+      {
+        "date": "2025-10-29",
+        "bullish": 44,
+        "neutral": 19,
+        "bearish": 36,
+        "spread": 7,
+        "bull_avg": 44,
+        "bear_avg": 36
+      },
+      {
+        "date": "2025-11-05",
+        "bullish": 37,
+        "neutral": 25,
+        "bearish": 36,
+        "spread": 1,
+        "bull_avg": 37,
+        "bear_avg": 36
+      },
+      {
+        "date": "2025-11-12",
+        "bullish": 31,
+        "neutral": 19,
+        "bearish": 49,
+        "spread": -17,
+        "bull_avg": 31,
+        "bear_avg": 49
+      },
+      {
+        "date": "2025-11-19",
+        "bullish": 32,
+        "neutral": 23,
+        "bearish": 43,
+        "spread": -10,
+        "bull_avg": 32,
+        "bear_avg": 43
+      },
+      {
+        "date": "2025-11-26",
+        "bullish": 32,
+        "neutral": 25,
+        "bearish": 42,
+        "spread": -10,
+        "bull_avg": 32,
+        "bear_avg": 42
+      },
+      {
+        "date": "2025-12-03",
+        "bullish": 44,
+        "neutral": 24,
+        "bearish": 30,
+        "spread": 13,
+        "bull_avg": 44,
+        "bear_avg": 30
+      },
+      {
+        "date": "2025-12-10",
+        "bullish": 44,
+        "neutral": 24,
+        "bearish": 30,
+        "spread": 14,
+        "bull_avg": 44,
+        "bear_avg": 30
+      },
+      {
+        "date": "2025-12-17",
+        "bullish": 44,
+        "neutral": 22,
+        "bearish": 33,
+        "spread": 10,
+        "bull_avg": 44,
+        "bear_avg": 33
+      },
+      {
+        "date": "2025-12-24",
+        "bullish": 37,
+        "neutral": 27,
+        "bearish": 34,
+        "spread": 2,
+        "bull_avg": 37,
+        "bear_avg": 34
+      },
+      {
+        "date": "2025-12-31",
+        "bullish": 42,
+        "neutral": 30,
+        "bearish": 26,
+        "spread": 15,
+        "bull_avg": 42,
+        "bear_avg": 26
+      },
+      {
+        "date": "2026-01-07",
+        "bullish": 42,
+        "neutral": 27,
+        "bearish": 30,
+        "spread": 12,
+        "bull_avg": 42,
+        "bear_avg": 30
+      },
+      {
+        "date": "2026-01-14",
+        "bullish": 49,
+        "neutral": 22,
+        "bearish": 28,
+        "spread": 21,
+        "bull_avg": 49,
+        "bear_avg": 28
+      },
+      {
+        "date": "2026-01-21",
+        "bullish": 43,
+        "neutral": 24,
+        "bearish": 32,
+        "spread": 10,
+        "bull_avg": 43,
+        "bear_avg": 32
+      },
+      {
+        "date": "2026-01-28",
+        "bullish": 44,
+        "neutral": 24,
+        "bearish": 30,
+        "spread": 13,
+        "bull_avg": 44,
+        "bear_avg": 30
+      },
+      {
+        "date": "2026-02-04",
+        "bullish": 39,
+        "neutral": 31,
+        "bearish": 29,
+        "spread": 10,
+        "bull_avg": 39,
+        "bear_avg": 29
+      },
+      {
+        "date": "2026-02-11",
+        "bullish": 38,
+        "neutral": 23,
+        "bearish": 38,
+        "spread": 0,
+        "bull_avg": 38,
+        "bear_avg": 38
+      },
+      {
+        "date": "2026-02-18",
+        "bullish": 34,
+        "neutral": 28,
+        "bearish": 36,
+        "spread": -2,
+        "bull_avg": 34,
+        "bear_avg": 36
+      },
+      {
+        "date": "2026-02-25",
+        "bullish": 33,
+        "neutral": 27,
+        "bearish": 39,
+        "spread": -6,
+        "bull_avg": 33,
+        "bear_avg": 39
+      },
+      {
+        "date": "2026-03-04",
+        "bullish": 33,
+        "neutral": 31,
+        "bearish": 35,
+        "spread": -2,
+        "bull_avg": 33,
+        "bear_avg": 35
+      },
+      {
+        "date": "2026-03-11",
+        "bullish": 31,
+        "neutral": 21,
+        "bearish": 46,
+        "spread": -14,
+        "bull_avg": 31,
+        "bear_avg": 46
+      },
+      {
+        "date": "2026-03-18",
+        "bullish": 30,
+        "neutral": 17,
+        "bearish": 52,
+        "spread": -21,
+        "bull_avg": 30,
+        "bear_avg": 52
+      },
+      {
+        "date": "2026-03-25",
+        "bullish": 32,
+        "neutral": 18,
+        "bearish": 49,
+        "spread": -17,
+        "bull_avg": 32,
+        "bear_avg": 49
+      },
+      {
+        "date": "2026-04-01",
+        "bullish": 33,
+        "neutral": 15,
+        "bearish": 51,
+        "spread": -17,
+        "bull_avg": 33,
+        "bear_avg": 51
+      },
+      {
+        "date": "2026-04-08",
+        "bullish": 35,
+        "neutral": 21,
+        "bearish": 42,
+        "spread": -7,
+        "bull_avg": 35,
+        "bear_avg": 42
+      },
+      {
+        "date": "2026-04-15",
+        "bullish": 31,
+        "neutral": 25,
+        "bearish": 42,
+        "spread": -11,
+        "bull_avg": 31,
+        "bear_avg": 42
+      }
+    ]
+  },
+  "errors": []
 };
