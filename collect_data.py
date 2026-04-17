@@ -106,57 +106,107 @@ def collect_fear_greed():
 
 
 def collect_aaii():
-    """Collect AAII Investor Sentiment Survey data."""
+    """Collect AAII Investor Sentiment Survey data.
+
+    Strategy:
+    1. Try main survey page for dataChart5 (52-week JS variable)
+    2. Try results table page for precise latest values
+    3. If both fail, try to preserve existing AAII data from sentiment_data.js
+    """
     print("[2/2] Fetching AAII Sentiment Survey...")
 
-    url = "https://www.aaii.com/sentimentsurvey"
-    html = fetch_url(url, headers={"Referer": "https://www.aaii.com/"})
-
-    # Extract dataChart5 array (52-week history)
-    match = re.search(r"var\s+dataChart5\s*=\s*(\[[\s\S]*?\]);", html)
-    if not match:
-        raise ValueError("Could not find dataChart5 in AAII page")
-
-    raw_json = match.group(1)
-    # Fix unquoted 'spread:' key
-    raw_json = re.sub(r"(?<!\")spread:", '"spread":', raw_json)
-    history = json.loads(raw_json)
-
-    # Get latest entry
-    latest = history[-1] if history else {}
-
-    # Also try to get more precise values from the results table
+    history = []
     precise_latest = None
+
+    # Strategy 1: Main survey page (has 52-week history in JS variable)
+    try:
+        url = "https://www.aaii.com/sentimentsurvey"
+        html = fetch_url(url, headers={"Referer": "https://www.aaii.com/"})
+        match = re.search(r"var\s+dataChart5\s*=\s*(\[[\s\S]*?\]);", html)
+        if match:
+            raw_json = match.group(1)
+            raw_json = re.sub(r"(?<!\")spread:", '"spread":', raw_json)
+            history = json.loads(raw_json)
+            print(f"  -> Got {len(history)} weeks of history from survey page")
+        else:
+            print("  -> dataChart5 not found in HTML (may require JS rendering)")
+    except Exception as e:
+        print(f"  -> Survey page fetch failed: {e}")
+
+    # Strategy 2: Results table (simpler HTML, more likely to work)
     try:
         results_url = "https://www.aaii.com/sentimentsurvey/sent_results"
-        results_html = fetch_url(results_url, headers={"Referer": "https://www.aaii.com/sentimentsurvey"})
-        # Parse first data row from results table
-        row_match = re.search(
-            r'<tr[^>]*align="center"[^>]*>\s*<td[^>]*>([^<]+)</td>\s*'
-            r"<td[^>]*>([^<]+)</td>\s*<td[^>]*>([^<]+)</td>\s*<td[^>]*>([^<]+)</td>",
+        results_html = fetch_url(
+            results_url,
+            headers={"Referer": "https://www.aaii.com/sentimentsurvey"},
+        )
+        rows = re.findall(
+            r'<tr[^>]*align="center"[^>]*>\s*'
+            r"<td[^>]*>([^<]+)</td>\s*"
+            r"<td[^>]*>([^<]+)</td>\s*"
+            r"<td[^>]*>([^<]+)</td>\s*"
+            r"<td[^>]*>([^<]+)</td>",
             results_html,
         )
-        if row_match:
+        if rows:
+            # First row is the latest
+            r = rows[0]
             precise_latest = {
-                "date": row_match.group(1).strip(),
-                "bullish": float(row_match.group(2).strip()),
-                "neutral": float(row_match.group(3).strip()),
-                "bearish": float(row_match.group(4).strip()),
+                "date": r[0].strip(),
+                "bullish": float(r[1].strip()),
+                "neutral": float(r[2].strip()),
+                "bearish": float(r[3].strip()),
             }
-    except Exception as e:
-        print(f"  -> Precise table fetch failed (using chart data): {e}")
+            print(f"  -> Got precise latest from results table: {precise_latest}")
 
-    # Build latest data (prefer precise if available)
+            # If we don't have history from Strategy 1, build partial history from table
+            if not history and len(rows) >= 2:
+                for row in rows:
+                    bull = float(row[1].strip())
+                    bear = float(row[3].strip())
+                    history.append({
+                        "date_": row[0].strip(),
+                        "bullish": str(round(bull)),
+                        "neutral": str(round(float(row[2].strip()))),
+                        "bearish": str(round(bear)),
+                        "spread": str(round(bull - bear)),
+                        "bullAvg": str(round(bull)),
+                        "bearAvg": str(round(bear)),
+                    })
+                history.reverse()  # oldest first
+                print(f"  -> Built {len(history)} rows of history from results table")
+    except Exception as e:
+        print(f"  -> Results table fetch failed: {e}")
+
+    # Strategy 3: Preserve existing data if we got nothing new
+    if not history and not precise_latest:
+        try:
+            with open("sentiment_data.js", "r", encoding="utf-8") as f:
+                existing = f.read()
+            match = re.search(r"window\.SENTIMENT_DATA\s*=\s*(\{[\s\S]*\});", existing)
+            if match:
+                old_data = json.loads(match.group(1))
+                if old_data.get("aaii"):
+                    print("  -> Preserving existing AAII data (fresh fetch failed)")
+                    return old_data["aaii"]
+        except Exception:
+            pass
+        raise ValueError("All AAII collection methods failed and no existing data")
+
+    # Build latest data
     if precise_latest:
         bull = precise_latest["bullish"]
         neut = precise_latest["neutral"]
         bear = precise_latest["bearish"]
         date_str = precise_latest["date"]
-    else:
+    elif history:
+        latest = history[-1]
         bull = float(latest.get("bullish", 0))
         neut = float(latest.get("neutral", 0))
         bear = float(latest.get("bearish", 0))
         date_str = latest.get("date_", "")
+    else:
+        raise ValueError("No AAII data available")
 
     # Build history array
     hist_arr = []
@@ -209,10 +259,27 @@ def main():
         print(f"  !! {err}")
         data["errors"].append(err)
 
-    # Check if we got at least one source
+    # Check if we got at least one source with new data
     if data["fear_greed"] is None and data["aaii"] is None:
         print("ERROR: Both sources failed. Not overwriting existing data.")
         sys.exit(1)
+
+    # If only one source failed, try to preserve existing data for the other
+    if data["fear_greed"] is None or data["aaii"] is None:
+        try:
+            with open("sentiment_data.js", "r", encoding="utf-8") as f:
+                existing = f.read()
+            match = re.search(r"window\.SENTIMENT_DATA\s*=\s*(\{[\s\S]*\});", existing)
+            if match:
+                old = json.loads(match.group(1))
+                if data["fear_greed"] is None and old.get("fear_greed"):
+                    data["fear_greed"] = old["fear_greed"]
+                    print("  -> Preserved existing Fear & Greed data")
+                if data["aaii"] is None and old.get("aaii"):
+                    data["aaii"] = old["aaii"]
+                    print("  -> Preserved existing AAII data")
+        except Exception:
+            pass
 
     # Write output
     js_content = "window.SENTIMENT_DATA = " + json.dumps(data, ensure_ascii=False, indent=2) + ";\n"
