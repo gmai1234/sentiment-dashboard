@@ -1,13 +1,13 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-04-27T23:50:21Z",
+  "updated": "2026-04-28T12:22:49Z",
   "fear_greed": {
-    "score": 67.3,
+    "score": 67.9,
     "rating": "greed",
-    "timestamp": "2026-04-27T23:34:48+00:00",
-    "previous_close": 66.0,
-    "previous_1_week": 70.9,
+    "timestamp": "2026-04-28T12:06:31+00:00",
+    "previous_close": 67.3,
+    "previous_1_week": 67.8,
     "previous_1_month": 14.5,
-    "previous_1_year": 34.5,
+    "previous_1_year": 32.1,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
@@ -16,12 +16,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Stock Price Strength",
-        "score": 47,
+        "score": 50.4,
         "rating": "neutral"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 73.4,
+        "score": 73.6,
         "rating": "greed"
       },
       {
@@ -46,11 +46,6 @@ window.SENTIMENT_DATA = {
       }
     ],
     "history": [
-      {
-        "date": "2025-12-18",
-        "score": 42.4,
-        "rating": "fear"
-      },
       {
         "date": "2025-12-19",
         "score": 44.2,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-04-27",
-        "score": 67.3,
+        "score": 67.9,
         "rating": "greed"
       },
       {
-        "date": "2026-04-27",
-        "score": 67.3,
+        "date": "2026-04-28",
+        "score": 67.9,
+        "rating": "greed"
+      },
+      {
+        "date": "2026-04-28",
+        "score": 67.9,
         "rating": "greed"
       }
     ]
