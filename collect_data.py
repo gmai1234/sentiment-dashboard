@@ -140,19 +140,42 @@ def collect_aaii():
             results_url,
             headers={"Referer": "https://www.aaii.com/sentimentsurvey"},
         )
+        # Strategy 2 regex: tr 의 어떤 속성도 허용 + percent 기호·whitespace 관대
+        # 날짜 column 은 "May 6" 같은 짧은 월·일 (year 없음) — 현재년도로 ISO 변환
         rows = re.findall(
-            r'<tr[^>]*align="center"[^>]*>\s*'
-            r"<td[^>]*>([^<]+)</td>\s*"
-            r"<td[^>]*>([^<]+)</td>\s*"
-            r"<td[^>]*>([^<]+)</td>\s*"
-            r"<td[^>]*>([^<]+)</td>",
-            results_html,
+            r'<tr[^>]*>\s*'
+            r'<td[^>]*>\s*([A-Za-z]{3,9}\s+\d{1,2})\s*</td>\s*'
+            r'<td[^>]*>\s*([\d.]+)\s*%?\s*</td>\s*'
+            r'<td[^>]*>\s*([\d.]+)\s*%?\s*</td>\s*'
+            r'<td[^>]*>\s*([\d.]+)\s*%?\s*</td>',
+            results_html, re.DOTALL
         )
+        print(f"  -> Strategy 2 regex matched {len(rows)} rows")
         if rows:
-            # First row is the latest
+            # 날짜 "May 6" → ISO "2026-05-06" 변환
+            def parse_date(s):
+                from datetime import datetime
+                s = s.strip()
+                # 현재 년도 가정. 단 미래 날짜 나오면 작년
+                try:
+                    cur_year = datetime.now().year
+                    dt = datetime.strptime(f"{s} {cur_year}", "%b %d %Y")
+                    # 미래 날짜면 작년으로 (12월 publish 가 1월 fetch 시점)
+                    if dt > datetime.now():
+                        dt = datetime.strptime(f"{s} {cur_year-1}", "%b %d %Y")
+                    return dt.strftime("%Y-%m-%d")
+                except ValueError:
+                    try:
+                        dt = datetime.strptime(f"{s} {cur_year}", "%B %d %Y")
+                        if dt > datetime.now():
+                            dt = datetime.strptime(f"{s} {cur_year-1}", "%B %d %Y")
+                        return dt.strftime("%Y-%m-%d")
+                    except ValueError:
+                        return s  # fallback: raw string
+
             r = rows[0]
             precise_latest = {
-                "date": r[0].strip(),
+                "date": parse_date(r[0]),
                 "bullish": float(r[1].strip()),
                 "neutral": float(r[2].strip()),
                 "bearish": float(r[3].strip()),
@@ -162,10 +185,11 @@ def collect_aaii():
             # If we don't have history from Strategy 1, build partial history from table
             if not history and len(rows) >= 2:
                 for row in rows:
+                    row = (parse_date(row[0]), row[1], row[2], row[3])
                     bull = float(row[1].strip())
                     bear = float(row[3].strip())
                     history.append({
-                        "date_": row[0].strip(),
+                        "date_": row[0],
                         "bullish": str(round(bull)),
                         "neutral": str(round(float(row[2].strip()))),
                         "bearish": str(round(bear)),
