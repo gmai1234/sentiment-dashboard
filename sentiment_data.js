@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-05-19T00:02:18Z",
+  "updated": "2026-05-19T13:54:05Z",
   "fear_greed": {
-    "score": 62.8,
+    "score": 61.0,
     "rating": "greed",
-    "timestamp": "2026-05-18T22:45:10+00:00",
-    "previous_close": 62.9,
-    "previous_1_week": 65.4,
+    "timestamp": "2026-05-19T13:52:31+00:00",
+    "previous_close": 62.8,
+    "previous_1_week": 65.1,
     "previous_1_month": 68.6,
-    "previous_1_year": 70.6,
+    "previous_1_year": 69.7,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 97,
+        "score": 93.4,
         "rating": "extreme greed"
       },
       {
         "name": "Stock Price Strength",
-        "score": 46.2,
-        "rating": "neutral"
-      },
-      {
-        "name": "Stock Price Breadth",
-        "score": 30,
+        "score": 43.4,
         "rating": "fear"
       },
       {
+        "name": "Stock Price Breadth",
+        "score": 24.6,
+        "rating": "extreme fear"
+      },
+      {
         "name": "Put/Call Options",
-        "score": 87.8,
+        "score": 87,
         "rating": "extreme greed"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 38.6,
+        "score": 45,
         "rating": "fear"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 90,
+        "score": 85.2,
         "rating": "extreme greed"
       }
     ],
     "history": [
-      {
-        "date": "2026-01-08",
-        "score": 48.4,
-        "rating": "neutral"
-      },
       {
         "date": "2026-01-09",
         "score": 54.1,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-05-18",
-        "score": 62.8,
+        "score": 61.5,
         "rating": "greed"
       },
       {
-        "date": "2026-05-18",
-        "score": 62.8,
+        "date": "2026-05-19",
+        "score": 62.2,
+        "rating": "greed"
+      },
+      {
+        "date": "2026-05-19",
+        "score": 58.9,
         "rating": "greed"
       }
     ]
