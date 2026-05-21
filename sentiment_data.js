@@ -1,33 +1,33 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-05-21T14:12:09Z",
+  "updated": "2026-05-21T23:59:01Z",
   "fear_greed": {
-    "score": 59.7,
+    "score": 58.3,
     "rating": "greed",
-    "timestamp": "2026-05-21T14:11:07+00:00",
+    "timestamp": "2026-05-21T23:42:57+00:00",
     "previous_close": 60.9,
-    "previous_1_week": 65.0,
+    "previous_1_week": 65.9,
     "previous_1_month": 67.6,
     "previous_1_year": 66.2,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 94.8,
+        "score": 96.4,
         "rating": "extreme greed"
       },
       {
         "name": "Stock Price Strength",
-        "score": 40.8,
+        "score": 41.2,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 21,
+        "score": 24.4,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 77.8,
-        "rating": "extreme greed"
+        "score": 70.4,
+        "rating": "greed"
       },
       {
         "name": "Market Volatility (VIX)",
@@ -36,8 +36,8 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 46.8,
-        "rating": "neutral"
+        "score": 40.8,
+        "rating": "fear"
       },
       {
         "name": "Safe Haven Demand",
@@ -438,42 +438,42 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-05-07",
-        "score": 66.4,
+        "score": 67.3,
         "rating": "greed"
       },
       {
         "date": "2026-05-08",
-        "score": 66.7,
+        "score": 67.3,
         "rating": "greed"
       },
       {
         "date": "2026-05-11",
-        "score": 65.4,
+        "score": 66.6,
         "rating": "greed"
       },
       {
         "date": "2026-05-12",
-        "score": 65.1,
+        "score": 65.7,
         "rating": "greed"
       },
       {
         "date": "2026-05-13",
-        "score": 64.0,
-        "rating": "greed"
-      },
-      {
-        "date": "2026-05-14",
         "score": 65.0,
         "rating": "greed"
       },
       {
+        "date": "2026-05-14",
+        "score": 65.9,
+        "rating": "greed"
+      },
+      {
         "date": "2026-05-15",
-        "score": 63.0,
+        "score": 63.2,
         "rating": "greed"
       },
       {
         "date": "2026-05-18",
-        "score": 61.5,
+        "score": 61.6,
         "rating": "greed"
       },
       {
@@ -483,17 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-05-20",
-        "score": 60.2,
+        "score": 60.3,
         "rating": "greed"
       },
       {
         "date": "2026-05-21",
-        "score": 59.6,
+        "score": 58.3,
         "rating": "greed"
       },
       {
         "date": "2026-05-21",
-        "score": 59.3,
+        "score": 58.3,
         "rating": "greed"
       }
     ]
