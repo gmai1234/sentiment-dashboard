@@ -1,5 +1,5 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-05-30T23:57:57Z",
+  "updated": "2026-05-31T12:09:00Z",
   "fear_greed": {
     "score": 60.2,
     "rating": "greed",
@@ -507,15 +507,6 @@ window.SENTIMENT_DATA = {
       "spread": -6.3
     },
     "history": [
-      {
-        "date": "2025-12-31",
-        "bullish": 42.0,
-        "neutral": 31.0,
-        "bearish": 27.0,
-        "spread": 15.0,
-        "bull_avg": 42.0,
-        "bear_avg": 27.0
-      },
       {
         "date": "2026-01-07",
         "bullish": 42.0,
