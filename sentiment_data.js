@@ -1,27 +1,27 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-06-03T00:25:04Z",
+  "updated": "2026-06-03T15:25:34Z",
   "fear_greed": {
-    "score": 57.0,
-    "rating": "greed",
-    "timestamp": "2026-06-02T23:59:49+00:00",
-    "previous_close": 59.1,
-    "previous_1_week": 60.9,
+    "score": 54.5,
+    "rating": "neutral",
+    "timestamp": "2026-06-03T15:23:48+00:00",
+    "previous_close": 57.0,
+    "previous_1_week": 60.6,
     "previous_1_month": 71.2,
-    "previous_1_year": 62.4,
+    "previous_1_year": 54.6,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 97.6,
+        "score": 94,
         "rating": "extreme greed"
       },
       {
         "name": "Stock Price Strength",
-        "score": 37.8,
+        "score": 35,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 35.4,
+        "score": 32.8,
         "rating": "fear"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 0.2,
+        "score": 0.4,
         "rating": "extreme fear"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 79.8,
-        "rating": "extreme greed"
+        "score": 71.8,
+        "rating": "greed"
       }
     ],
     "history": [
-      {
-        "date": "2026-01-23",
-        "score": 54.9,
-        "rating": "neutral"
-      },
       {
         "date": "2026-01-26",
         "score": 57.7,
@@ -488,13 +483,18 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-06-02",
-        "score": 57.0,
+        "score": 56.1,
         "rating": "greed"
       },
       {
-        "date": "2026-06-02",
-        "score": 57.0,
-        "rating": "greed"
+        "date": "2026-06-03",
+        "score": 54.6,
+        "rating": "neutral"
+      },
+      {
+        "date": "2026-06-03",
+        "score": 54.7,
+        "rating": "neutral"
       }
     ]
   },
