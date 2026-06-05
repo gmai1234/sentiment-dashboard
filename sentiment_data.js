@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-06-05T00:02:12Z",
+  "updated": "2026-06-05T13:50:44Z",
   "fear_greed": {
-    "score": 54.7,
+    "score": 51.9,
     "rating": "neutral",
-    "timestamp": "2026-06-04T23:45:54+00:00",
-    "previous_close": 54.0,
-    "previous_1_week": 60.1,
-    "previous_1_month": 66.9,
-    "previous_1_year": 54.9,
+    "timestamp": "2026-06-05T13:48:36+00:00",
+    "previous_close": 54.7,
+    "previous_1_week": 59.5,
+    "previous_1_month": 67.3,
+    "previous_1_year": 58.0,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 93.8,
+        "score": 88.4,
         "rating": "extreme greed"
       },
       {
         "name": "Stock Price Strength",
-        "score": 33,
+        "score": 31.6,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 31.4,
+        "score": 29.2,
         "rating": "fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 96.6,
+        "score": 94.4,
         "rating": "extreme greed"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 6.6,
+        "score": 8.6,
         "rating": "extreme fear"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 71.8,
+        "score": 62.2,
         "rating": "greed"
       }
     ],
     "history": [
-      {
-        "date": "2026-01-27",
-        "score": 65.0,
-        "rating": "greed"
-      },
       {
         "date": "2026-01-28",
         "score": 65.5,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-06-04",
-        "score": 54.7,
+        "score": 53.9,
         "rating": "neutral"
       },
       {
-        "date": "2026-06-04",
-        "score": 54.7,
+        "date": "2026-06-05",
+        "score": 52.1,
+        "rating": "neutral"
+      },
+      {
+        "date": "2026-06-05",
+        "score": 51.9,
         "rating": "neutral"
       }
     ]
