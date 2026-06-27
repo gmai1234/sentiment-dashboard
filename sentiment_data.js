@@ -1,47 +1,47 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-06-26T13:07:44Z",
+  "updated": "2026-06-27T00:01:41Z",
   "fear_greed": {
-    "score": 24.9,
+    "score": 24.8,
     "rating": "extreme fear",
-    "timestamp": "2026-06-26T12:51:46+00:00",
+    "timestamp": "2026-06-26T23:45:46+00:00",
     "previous_close": 25.5,
-    "previous_1_week": 31.6,
+    "previous_1_week": 37.6,
     "previous_1_month": 60.9,
     "previous_1_year": 63.0,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 34.8,
+        "score": 34.4,
         "rating": "fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 31.4,
+        "score": 31.8,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 14.4,
+        "score": 15.6,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 27,
-        "rating": "fear"
+        "score": 24,
+        "rating": "extreme fear"
       },
       {
         "name": "Market Volatility (VIX)",
-        "score": 44.87,
-        "rating": "fear"
+        "score": 50,
+        "rating": "neutral"
       },
       {
         "name": "Junk Bond Demand",
-        "score": 4.4,
+        "score": 3.4,
         "rating": "extreme fear"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 17.2,
+        "score": 14.2,
         "rating": "extreme fear"
       }
     ],
@@ -313,42 +313,42 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-05-07",
-        "score": 66.4,
+        "score": 67.3,
         "rating": "greed"
       },
       {
         "date": "2026-05-08",
-        "score": 66.7,
+        "score": 67.3,
         "rating": "greed"
       },
       {
         "date": "2026-05-11",
-        "score": 65.4,
+        "score": 66.6,
         "rating": "greed"
       },
       {
         "date": "2026-05-12",
-        "score": 65.1,
+        "score": 65.7,
         "rating": "greed"
       },
       {
         "date": "2026-05-13",
-        "score": 64.0,
-        "rating": "greed"
-      },
-      {
-        "date": "2026-05-14",
         "score": 65.0,
         "rating": "greed"
       },
       {
+        "date": "2026-05-14",
+        "score": 65.9,
+        "rating": "greed"
+      },
+      {
         "date": "2026-05-15",
-        "score": 63.0,
+        "score": 63.2,
         "rating": "greed"
       },
       {
         "date": "2026-05-18",
-        "score": 61.5,
+        "score": 61.6,
         "rating": "greed"
       },
       {
@@ -358,12 +358,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-05-20",
-        "score": 60.2,
+        "score": 60.3,
         "rating": "greed"
       },
       {
         "date": "2026-05-21",
-        "score": 57.9,
+        "score": 58.1,
         "rating": "greed"
       },
       {
@@ -378,12 +378,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-05-27",
-        "score": 60.5,
+        "score": 60.6,
         "rating": "greed"
       },
       {
         "date": "2026-05-28",
-        "score": 60.0,
+        "score": 60.1,
         "rating": "greed"
       },
       {
@@ -423,7 +423,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-06-09",
-        "score": 32.4,
+        "score": 32.5,
         "rating": "fear"
       },
       {
@@ -463,7 +463,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-06-19",
-        "score": 31.6,
+        "score": 37.6,
         "rating": "fear"
       },
       {
@@ -483,17 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-06-25",
-        "score": 24.9,
+        "score": 24.4,
         "rating": "extreme fear"
       },
       {
         "date": "2026-06-26",
-        "score": 24.9,
+        "score": 24.8,
         "rating": "extreme fear"
       },
       {
         "date": "2026-06-26",
-        "score": 24.9,
+        "score": 24.8,
         "rating": "extreme fear"
       }
     ]
