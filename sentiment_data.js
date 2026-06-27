@@ -1,9 +1,9 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-06-27T00:01:41Z",
+  "updated": "2026-06-27T12:06:26Z",
   "fear_greed": {
     "score": 24.8,
     "rating": "extreme fear",
-    "timestamp": "2026-06-26T23:45:46+00:00",
+    "timestamp": "2026-06-26T23:59:57+00:00",
     "previous_close": 25.5,
     "previous_1_week": 37.6,
     "previous_1_month": 60.9,
