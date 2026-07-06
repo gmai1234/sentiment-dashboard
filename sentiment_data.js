@@ -1,33 +1,33 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-07-06T00:01:43Z",
+  "updated": "2026-07-06T14:21:29Z",
   "fear_greed": {
-    "score": 31.9,
+    "score": 43.8,
     "rating": "fear",
-    "timestamp": "2026-07-03T00:59:42+00:00",
-    "previous_close": 31.4,
-    "previous_1_week": 25.1,
-    "previous_1_month": 53.0,
+    "timestamp": "2026-07-06T14:20:24+00:00",
+    "previous_close": 34.1,
+    "previous_1_week": 27.3,
+    "previous_1_month": 41.8,
     "previous_1_year": 77.6,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 48,
-        "rating": "neutral"
+        "score": 55.4,
+        "rating": "greed"
       },
       {
         "name": "Stock Price Strength",
-        "score": 41.6,
+        "score": 43.6,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 19.4,
+        "score": 22.8,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 43.8,
-        "rating": "fear"
+        "score": 71.6,
+        "rating": "greed"
       },
       {
         "name": "Market Volatility (VIX)",
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 0.8,
+        "score": 15.8,
         "rating": "extreme fear"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 24.4,
-        "rating": "extreme fear"
+        "score": 48.8,
+        "rating": "neutral"
       }
     ],
     "history": [
-      {
-        "date": "2026-02-26",
-        "score": 42.9,
-        "rating": "fear"
-      },
       {
         "date": "2026-02-27",
         "score": 41.2,
@@ -483,17 +478,22 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-07-02",
-        "score": 34.1,
+        "score": 37.5,
         "rating": "fear"
       },
       {
         "date": "2026-07-03",
-        "score": 34.1,
+        "score": 32.4,
         "rating": "fear"
       },
       {
-        "date": "2026-07-03",
-        "score": 31.9,
+        "date": "2026-07-06",
+        "score": 44,
+        "rating": "fear"
+      },
+      {
+        "date": "2026-07-06",
+        "score": 44.0,
         "rating": "fear"
       }
     ]
