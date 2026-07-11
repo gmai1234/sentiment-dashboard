@@ -1,5 +1,5 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-07-11T11:48:53Z",
+  "updated": "2026-07-11T23:50:31Z",
   "fear_greed": {
     "score": 49.5,
     "rating": "neutral",
