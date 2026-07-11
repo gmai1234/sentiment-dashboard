@@ -1,9 +1,9 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-07-10T23:54:21Z",
+  "updated": "2026-07-11T11:48:53Z",
   "fear_greed": {
     "score": 49.5,
     "rating": "neutral",
-    "timestamp": "2026-07-10T21:43:00+00:00",
+    "timestamp": "2026-07-10T23:59:47+00:00",
     "previous_close": 47.3,
     "previous_1_week": 32.4,
     "previous_1_month": 26.9,
@@ -507,15 +507,6 @@ window.SENTIMENT_DATA = {
       "spread": -0.9
     },
     "history": [
-      {
-        "date": "2026-02-11",
-        "bullish": 38.0,
-        "neutral": 23.0,
-        "bearish": 38.0,
-        "spread": 0.0,
-        "bull_avg": 38.0,
-        "bear_avg": 38.0
-      },
       {
         "date": "2026-02-18",
         "bullish": 34.0,
