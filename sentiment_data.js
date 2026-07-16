@@ -1,13 +1,13 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-07-15T23:55:21Z",
+  "updated": "2026-07-16T12:18:01Z",
   "fear_greed": {
-    "score": 46.3,
+    "score": 46.9,
     "rating": "neutral",
-    "timestamp": "2026-07-15T23:38:51+00:00",
-    "previous_close": 43.3,
-    "previous_1_week": 44.1,
-    "previous_1_month": 41.6,
-    "previous_1_year": 73.5,
+    "timestamp": "2026-07-16T12:01:46+00:00",
+    "previous_close": 46.3,
+    "previous_1_week": 46.1,
+    "previous_1_month": 39.1,
+    "previous_1_year": 72.9,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
@@ -16,12 +16,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Stock Price Strength",
-        "score": 39,
+        "score": 40.4,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 32.2,
+        "score": 34.6,
         "rating": "fear"
       },
       {
@@ -36,7 +36,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 40.8,
+        "score": 41.2,
         "rating": "fear"
       },
       {
@@ -46,11 +46,6 @@ window.SENTIMENT_DATA = {
       }
     ],
     "history": [
-      {
-        "date": "2026-03-10",
-        "score": 20.3,
-        "rating": "extreme fear"
-      },
       {
         "date": "2026-03-11",
         "score": 18.3,
@@ -488,23 +483,28 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-07-15",
-        "score": 46.3,
+        "score": 46.9,
         "rating": "neutral"
       },
       {
-        "date": "2026-07-15",
-        "score": 46.3,
+        "date": "2026-07-16",
+        "score": 46.9,
+        "rating": "neutral"
+      },
+      {
+        "date": "2026-07-16",
+        "score": 46.9,
         "rating": "neutral"
       }
     ]
   },
   "aaii": {
     "latest": {
-      "date": "2026-07-08",
-      "bullish": 36.3,
-      "neutral": 26.5,
-      "bearish": 37.2,
-      "spread": -0.9
+      "date": "2026-07-15",
+      "bullish": 44.9,
+      "neutral": 22.2,
+      "bearish": 32.9,
+      "spread": 12.0
     },
     "history": [
       {
@@ -695,6 +695,15 @@ window.SENTIMENT_DATA = {
         "spread": -1.0,
         "bull_avg": 36.0,
         "bear_avg": 37.0
+      },
+      {
+        "date": "2026-07-15",
+        "bullish": 45.0,
+        "neutral": 22.0,
+        "bearish": 33.0,
+        "spread": 12.0,
+        "bull_avg": 45.0,
+        "bear_avg": 33.0
       }
     ]
   },
