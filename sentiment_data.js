@@ -1,13 +1,13 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-08-02T23:54:05Z",
+  "updated": "2026-08-03T13:37:31Z",
   "fear_greed": {
-    "score": 42.5,
-    "rating": "fear",
-    "timestamp": "2026-07-31T23:59:52+00:00",
-    "previous_close": 38.9,
-    "previous_1_week": 41.3,
-    "previous_1_month": 30.0,
-    "previous_1_year": 63.7,
+    "score": 45.1,
+    "rating": "neutral",
+    "timestamp": "2026-08-03T13:36:44+00:00",
+    "previous_close": 42.5,
+    "previous_1_week": 37.6,
+    "previous_1_month": 32.5,
+    "previous_1_year": 49.8,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
@@ -41,16 +41,11 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Safe Haven Demand",
-        "score": 50.4,
+        "score": 50.8,
         "rating": "neutral"
       }
     ],
     "history": [
-      {
-        "date": "2026-03-24",
-        "score": 10.4,
-        "rating": "extreme fear"
-      },
       {
         "date": "2026-03-25",
         "score": 16.5,
@@ -488,13 +483,18 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-07-31",
-        "score": 42.5,
-        "rating": "fear"
+        "score": 45.1,
+        "rating": "neutral"
       },
       {
-        "date": "2026-07-31",
-        "score": 42.5,
-        "rating": "fear"
+        "date": "2026-08-03",
+        "score": 45.1,
+        "rating": "neutral"
+      },
+      {
+        "date": "2026-08-03",
+        "score": 45.1,
+        "rating": "neutral"
       }
     ]
   },
