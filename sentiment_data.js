@@ -1,9 +1,9 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-08-04T12:57:36Z",
+  "updated": "2026-08-04T23:58:33Z",
   "fear_greed": {
-    "score": 50.5,
-    "rating": "neutral",
-    "timestamp": "2026-08-04T12:41:16+00:00",
+    "score": 58.1,
+    "rating": "greed",
+    "timestamp": "2026-08-04T23:42:03+00:00",
     "previous_close": 45.8,
     "previous_1_week": 37.9,
     "previous_1_month": 32.5,
@@ -11,23 +11,23 @@ window.SENTIMENT_DATA = {
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 48.8,
-        "rating": "neutral"
+        "score": 81.4,
+        "rating": "extreme greed"
       },
       {
         "name": "Stock Price Strength",
-        "score": 29,
+        "score": 29.6,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 32.6,
+        "score": 32.4,
         "rating": "fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 37.4,
-        "rating": "fear"
+        "score": 46.6,
+        "rating": "neutral"
       },
       {
         "name": "Market Volatility (VIX)",
@@ -36,12 +36,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 71,
-        "rating": "greed"
+        "score": 95.2,
+        "rating": "extreme greed"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 59,
+        "score": 71.6,
         "rating": "greed"
       }
     ],
@@ -483,18 +483,18 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-08-03",
-        "score": 50.5,
+        "score": 50.7,
         "rating": "neutral"
       },
       {
         "date": "2026-08-04",
-        "score": 50.5,
-        "rating": "neutral"
+        "score": 58.1,
+        "rating": "greed"
       },
       {
         "date": "2026-08-04",
-        "score": 50.5,
-        "rating": "neutral"
+        "score": 58.1,
+        "rating": "greed"
       }
     ]
   },
