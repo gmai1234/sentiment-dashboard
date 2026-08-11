@@ -1,13 +1,13 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-08-10T23:29:38Z",
+  "updated": "2026-08-11T11:39:57Z",
   "fear_greed": {
-    "score": 64.4,
+    "score": 65,
     "rating": "greed",
-    "timestamp": "2026-08-10T23:12:19+00:00",
-    "previous_close": 63.7,
-    "previous_1_week": 50.7,
+    "timestamp": "2026-08-11T11:23:46+00:00",
+    "previous_close": 64.4,
+    "previous_1_week": 60.0,
     "previous_1_month": 46.8,
-    "previous_1_year": 58.4,
+    "previous_1_year": 57.6,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
@@ -16,13 +16,13 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Stock Price Strength",
-        "score": 31.8,
+        "score": 31.4,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 44.2,
-        "rating": "fear"
+        "score": 49,
+        "rating": "neutral"
       },
       {
         "name": "Put/Call Options",
@@ -36,7 +36,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 98.8,
+        "score": 98.6,
         "rating": "extreme greed"
       },
       {
@@ -46,11 +46,6 @@ window.SENTIMENT_DATA = {
       }
     ],
     "history": [
-      {
-        "date": "2026-04-01",
-        "score": 15.9,
-        "rating": "extreme fear"
-      },
       {
         "date": "2026-04-02",
         "score": 18.3,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-08-10",
-        "score": 64.4,
+        "score": 65,
         "rating": "greed"
       },
       {
-        "date": "2026-08-10",
-        "score": 64.4,
+        "date": "2026-08-11",
+        "score": 65,
+        "rating": "greed"
+      },
+      {
+        "date": "2026-08-11",
+        "score": 65,
         "rating": "greed"
       }
     ]
@@ -507,15 +507,6 @@ window.SENTIMENT_DATA = {
       "spread": -1.0
     },
     "history": [
-      {
-        "date": "2026-03-11",
-        "bullish": 32.0,
-        "neutral": 22.0,
-        "bearish": 46.0,
-        "spread": -14.0,
-        "bull_avg": 32.0,
-        "bear_avg": 46.0
-      },
       {
         "date": "2026-03-18",
         "bullish": 30.0,
