@@ -1,13 +1,13 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-08-17T23:17:52Z",
+  "updated": "2026-08-18T11:20:18Z",
   "fear_greed": {
-    "score": 60.0,
+    "score": 59.5,
     "rating": "greed",
-    "timestamp": "2026-08-17T23:01:37+00:00",
-    "previous_close": 65.0,
-    "previous_1_week": 64.7,
+    "timestamp": "2026-08-18T11:03:46+00:00",
+    "previous_close": 60.0,
+    "previous_1_week": 61.4,
     "previous_1_month": 37.2,
-    "previous_1_year": 63.5,
+    "previous_1_year": 64.2,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
@@ -16,12 +16,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Stock Price Strength",
-        "score": 27.4,
+        "score": 26.4,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 58.2,
+        "score": 56,
         "rating": "greed"
       },
       {
@@ -36,7 +36,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 99,
+        "score": 98.8,
         "rating": "extreme greed"
       },
       {
@@ -46,11 +46,6 @@ window.SENTIMENT_DATA = {
       }
     ],
     "history": [
-      {
-        "date": "2026-04-09",
-        "score": 33.8,
-        "rating": "fear"
-      },
       {
         "date": "2026-04-10",
         "score": 38.1,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-08-17",
-        "score": 60.0,
+        "score": 59.5,
         "rating": "greed"
       },
       {
-        "date": "2026-08-17",
-        "score": 60.0,
+        "date": "2026-08-18",
+        "score": 59.5,
+        "rating": "greed"
+      },
+      {
+        "date": "2026-08-18",
+        "score": 59.5,
         "rating": "greed"
       }
     ]
@@ -507,15 +507,6 @@ window.SENTIMENT_DATA = {
       "spread": -3.2
     },
     "history": [
-      {
-        "date": "2026-03-18",
-        "bullish": 30.0,
-        "neutral": 18.0,
-        "bearish": 52.0,
-        "spread": -22.0,
-        "bull_avg": 30.0,
-        "bear_avg": 52.0
-      },
       {
         "date": "2026-03-25",
         "bullish": 32.0,
