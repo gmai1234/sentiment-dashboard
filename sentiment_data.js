@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-09-01T01:34:13Z",
+  "updated": "2026-09-01T15:21:49Z",
   "fear_greed": {
-    "score": 49.7,
+    "score": 46.5,
     "rating": "neutral",
-    "timestamp": "2026-08-31T23:59:43+00:00",
-    "previous_close": 54.4,
-    "previous_1_week": 56.1,
+    "timestamp": "2026-09-01T15:19:32+00:00",
+    "previous_close": 49.7,
+    "previous_1_week": 56.8,
     "previous_1_month": 45.2,
     "previous_1_year": 61.5,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 35.4,
+        "score": 31.2,
         "rating": "fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 25,
+        "score": 22.4,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 53.8,
+        "score": 50,
         "rating": "neutral"
       },
       {
         "name": "Put/Call Options",
-        "score": 64.8,
+        "score": 57.2,
         "rating": "greed"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 93.8,
+        "score": 86.6,
         "rating": "extreme greed"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 25.4,
+        "score": 28,
         "rating": "fear"
       }
     ],
     "history": [
-      {
-        "date": "2026-04-23",
-        "score": 66.2,
-        "rating": "greed"
-      },
       {
         "date": "2026-04-24",
         "score": 65.4,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-08-31",
-        "score": 49.7,
+        "score": 47.5,
         "rating": "neutral"
       },
       {
-        "date": "2026-08-31",
-        "score": 49.7,
+        "date": "2026-09-01",
+        "score": 46.4,
+        "rating": "neutral"
+      },
+      {
+        "date": "2026-09-01",
+        "score": 46.5,
         "rating": "neutral"
       }
     ]
@@ -507,15 +507,6 @@ window.SENTIMENT_DATA = {
       "spread": -11.5
     },
     "history": [
-      {
-        "date": "2026-04-01",
-        "bullish": 34.0,
-        "neutral": 15.0,
-        "bearish": 51.0,
-        "spread": -18.0,
-        "bull_avg": 34.0,
-        "bear_avg": 51.0
-      },
       {
         "date": "2026-04-08",
         "bullish": 36.0,
