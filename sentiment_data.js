@@ -1,33 +1,33 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-09-10T14:45:12Z",
+  "updated": "2026-09-11T00:47:47Z",
   "fear_greed": {
-    "score": 35.3,
+    "score": 33.3,
     "rating": "fear",
-    "timestamp": "2026-09-10T14:32:54+00:00",
-    "previous_close": 39.0,
-    "previous_1_week": 43.9,
-    "previous_1_month": 64.7,
+    "timestamp": "2026-09-10T23:59:55+00:00",
+    "previous_close": 38.2,
+    "previous_1_week": 47.5,
+    "previous_1_month": 64.4,
     "previous_1_year": 57.9,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 24.8,
+        "score": 24.4,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 7,
+        "score": 6.8,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 19.6,
+        "score": 19.2,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 50,
-        "rating": "neutral"
+        "score": 42,
+        "rating": "fear"
       },
       {
         "name": "Market Volatility (VIX)",
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 76.8,
-        "rating": "extreme greed"
+        "score": 69,
+        "rating": "greed"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 21.2,
+        "score": 21.4,
         "rating": "extreme fear"
       }
     ],
     "history": [
-      {
-        "date": "2026-05-04",
-        "score": 66.9,
-        "rating": "greed"
-      },
       {
         "date": "2026-05-05",
         "score": 67.3,
@@ -292,148 +287,153 @@ window.SENTIMENT_DATA = {
         "rating": "fear"
       },
       {
+        "date": "2026-07-15",
+        "score": 44.4,
+        "rating": "fear"
+      },
+      {
         "date": "2026-07-16",
-        "score": 41.2,
+        "score": 41.9,
         "rating": "fear"
       },
       {
         "date": "2026-07-17",
-        "score": 37.2,
+        "score": 37.0,
         "rating": "fear"
       },
       {
         "date": "2026-07-20",
-        "score": 37.9,
+        "score": 36.0,
         "rating": "fear"
       },
       {
         "date": "2026-07-21",
-        "score": 43.4,
+        "score": 42.8,
         "rating": "fear"
       },
       {
         "date": "2026-07-22",
-        "score": 43.3,
+        "score": 44.4,
         "rating": "fear"
       },
       {
         "date": "2026-07-23",
-        "score": 38.9,
+        "score": 40.9,
         "rating": "fear"
       },
       {
         "date": "2026-07-24",
-        "score": 41.3,
+        "score": 40.8,
         "rating": "fear"
       },
       {
         "date": "2026-07-27",
-        "score": 37.6,
+        "score": 38.2,
         "rating": "fear"
       },
       {
         "date": "2026-07-28",
-        "score": 37.9,
+        "score": 37.1,
         "rating": "fear"
       },
       {
         "date": "2026-07-29",
-        "score": 34.7,
+        "score": 25.6,
         "rating": "fear"
       },
       {
         "date": "2026-07-30",
-        "score": 40.7,
+        "score": 38.1,
         "rating": "fear"
       },
       {
         "date": "2026-07-31",
-        "score": 45.2,
-        "rating": "neutral"
+        "score": 39.6,
+        "rating": "fear"
       },
       {
         "date": "2026-08-03",
-        "score": 50.7,
+        "score": 46.1,
         "rating": "neutral"
       },
       {
         "date": "2026-08-04",
-        "score": 60.0,
+        "score": 59.0,
         "rating": "greed"
       },
       {
         "date": "2026-08-05",
-        "score": 59.8,
+        "score": 60.2,
         "rating": "greed"
       },
       {
         "date": "2026-08-06",
-        "score": 58.9,
+        "score": 59.7,
         "rating": "greed"
       },
       {
         "date": "2026-08-07",
-        "score": 64.4,
+        "score": 65.1,
         "rating": "greed"
       },
       {
         "date": "2026-08-10",
-        "score": 64.7,
+        "score": 64.4,
         "rating": "greed"
       },
       {
         "date": "2026-08-11",
-        "score": 61.4,
+        "score": 60.1,
         "rating": "greed"
       },
       {
         "date": "2026-08-12",
-        "score": 62.9,
+        "score": 61.7,
         "rating": "greed"
       },
       {
         "date": "2026-08-13",
-        "score": 66.6,
+        "score": 66.1,
         "rating": "greed"
       },
       {
         "date": "2026-08-14",
-        "score": 64.0,
+        "score": 64.3,
         "rating": "greed"
       },
       {
         "date": "2026-08-17",
-        "score": 58.4,
+        "score": 59.1,
         "rating": "greed"
       },
       {
         "date": "2026-08-18",
-        "score": 55.1,
-        "rating": "greed"
+        "score": 54.6,
+        "rating": "neutral"
       },
       {
         "date": "2026-08-19",
-        "score": 57.2,
+        "score": 56.6,
         "rating": "greed"
       },
       {
         "date": "2026-08-20",
-        "score": 53.1,
+        "score": 51.4,
         "rating": "neutral"
       },
       {
         "date": "2026-08-21",
-        "score": 54.5,
+        "score": 54.7,
         "rating": "neutral"
       },
       {
         "date": "2026-08-24",
-        "score": 56.1,
-        "rating": "greed"
+        "score": 55.0,
+        "rating": "neutral"
       },
       {
         "date": "2026-08-25",
-        "score": 56.8,
+        "score": 59.6,
         "rating": "greed"
       },
       {
@@ -443,57 +443,57 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-08-27",
-        "score": 55.4,
+        "score": 57.3,
         "rating": "greed"
       },
       {
         "date": "2026-08-28",
-        "score": 52.3,
+        "score": 53.7,
         "rating": "neutral"
       },
       {
         "date": "2026-08-31",
-        "score": 47.5,
+        "score": 49.2,
         "rating": "neutral"
       },
       {
         "date": "2026-09-01",
-        "score": 30.9,
+        "score": 44.9,
         "rating": "fear"
       },
       {
         "date": "2026-09-02",
-        "score": 33.0,
-        "rating": "fear"
+        "score": 46.1,
+        "rating": "neutral"
       },
       {
         "date": "2026-09-03",
-        "score": 43.9,
-        "rating": "fear"
+        "score": 47.5,
+        "rating": "neutral"
       },
       {
         "date": "2026-09-04",
-        "score": 42.3,
-        "rating": "fear"
+        "score": 45.2,
+        "rating": "neutral"
       },
       {
         "date": "2026-09-08",
-        "score": 38.9,
+        "score": 39.1,
         "rating": "fear"
       },
       {
         "date": "2026-09-09",
-        "score": 36.1,
+        "score": 38.2,
         "rating": "fear"
       },
       {
         "date": "2026-09-10",
-        "score": 35.6,
+        "score": 33.3,
         "rating": "fear"
       },
       {
         "date": "2026-09-10",
-        "score": 35.7,
+        "score": 33.3,
         "rating": "fear"
       }
     ]
