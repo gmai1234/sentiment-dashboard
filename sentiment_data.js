@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-09-16T01:00:19Z",
+  "updated": "2026-09-16T15:18:19Z",
   "fear_greed": {
-    "score": 28.7,
+    "score": 28.9,
     "rating": "fear",
-    "timestamp": "2026-09-15T23:59:51+00:00",
-    "previous_close": 31.1,
-    "previous_1_week": 39.1,
+    "timestamp": "2026-09-16T15:16:17+00:00",
+    "previous_close": 28.7,
+    "previous_1_week": 38.2,
     "previous_1_month": 64.3,
-    "previous_1_year": 64.5,
+    "previous_1_year": 64.4,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 22.8,
+        "score": 24.8,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 1,
+        "score": 3.2,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 5,
+        "score": 1.8,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 32.2,
+        "score": 35.6,
         "rating": "fear"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 58.6,
-        "rating": "greed"
+        "score": 53.2,
+        "rating": "neutral"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 31,
+        "score": 33.6,
         "rating": "fear"
       }
     ],
     "history": [
-      {
-        "date": "2026-05-08",
-        "score": 67.3,
-        "rating": "greed"
-      },
       {
         "date": "2026-05-11",
         "score": 66.6,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-09-15",
-        "score": 28.7,
+        "score": 28.0,
         "rating": "fear"
       },
       {
-        "date": "2026-09-15",
-        "score": 28.7,
+        "date": "2026-09-16",
+        "score": 28.9,
+        "rating": "fear"
+      },
+      {
+        "date": "2026-09-16",
+        "score": 28.9,
         "rating": "fear"
       }
     ]
