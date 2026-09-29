@@ -1,22 +1,22 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-09-29T02:27:21Z",
+  "updated": "2026-09-29T16:45:46Z",
   "fear_greed": {
-    "score": 33.9,
+    "score": 32.2,
     "rating": "fear",
-    "timestamp": "2026-09-28T23:59:50+00:00",
-    "previous_close": 37.0,
-    "previous_1_week": 34.2,
+    "timestamp": "2026-09-29T16:41:33+00:00",
+    "previous_close": 33.8,
+    "previous_1_week": 35.0,
     "previous_1_month": 53.7,
-    "previous_1_year": 51.3,
+    "previous_1_year": 51.0,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 30.6,
+        "score": 27.8,
         "rating": "fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 0,
+        "score": 0.2,
         "rating": "extreme fear"
       },
       {
@@ -26,7 +26,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Put/Call Options",
-        "score": 40.2,
+        "score": 37.2,
         "rating": "fear"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 64.4,
+        "score": 59.4,
         "rating": "greed"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 52.4,
+        "score": 51.6,
         "rating": "neutral"
       }
     ],
     "history": [
-      {
-        "date": "2026-05-21",
-        "score": 57.5,
-        "rating": "greed"
-      },
       {
         "date": "2026-05-22",
         "score": 58.2,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-09-28",
-        "score": 33.9,
+        "score": 34.4,
         "rating": "fear"
       },
       {
-        "date": "2026-09-28",
-        "score": 33.9,
+        "date": "2026-09-29",
+        "score": 32.3,
+        "rating": "fear"
+      },
+      {
+        "date": "2026-09-29",
+        "score": 32.3,
         "rating": "fear"
       }
     ]
@@ -507,15 +507,6 @@ window.SENTIMENT_DATA = {
       "spread": -15.4
     },
     "history": [
-      {
-        "date": "2026-04-29",
-        "bullish": 38.0,
-        "neutral": 22.0,
-        "bearish": 40.0,
-        "spread": -2.0,
-        "bull_avg": 38.0,
-        "bear_avg": 40.0
-      },
       {
         "date": "2026-05-06",
         "bullish": 38.0,
