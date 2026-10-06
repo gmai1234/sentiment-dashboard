@@ -1,9 +1,9 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-10-05T19:31:29Z",
+  "updated": "2026-10-06T02:38:51Z",
   "fear_greed": {
-    "score": 44.2,
+    "score": 43.1,
     "rating": "fear",
-    "timestamp": "2026-10-05T19:26:03+00:00",
+    "timestamp": "2026-10-05T23:59:42+00:00",
     "previous_close": 31.2,
     "previous_1_week": 34.4,
     "previous_1_month": 45.2,
@@ -11,8 +11,8 @@ window.SENTIMENT_DATA = {
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 56.4,
-        "rating": "greed"
+        "score": 51.4,
+        "rating": "neutral"
       },
       {
         "name": "Stock Price Strength",
@@ -26,7 +26,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Put/Call Options",
-        "score": 34,
+        "score": 32.4,
         "rating": "fear"
       },
       {
@@ -41,7 +41,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Safe Haven Demand",
-        "score": 73.4,
+        "score": 71.2,
         "rating": "greed"
       }
     ],
@@ -488,12 +488,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-10-05",
-        "score": 44.4,
+        "score": 43.1,
         "rating": "fear"
       },
       {
         "date": "2026-10-05",
-        "score": 44.5,
+        "score": 43.1,
         "rating": "fear"
       }
     ]
