@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-10-07T02:00:32Z",
+  "updated": "2026-10-07T17:38:48Z",
   "fear_greed": {
-    "score": 47.4,
-    "rating": "neutral",
-    "timestamp": "2026-10-06T23:59:49+00:00",
-    "previous_close": 43.0,
-    "previous_1_week": 28.9,
+    "score": 44.8,
+    "rating": "fear",
+    "timestamp": "2026-10-07T17:35:18+00:00",
+    "previous_close": 47.2,
+    "previous_1_week": 30.3,
     "previous_1_month": 45.2,
-    "previous_1_year": 54.0,
+    "previous_1_year": 51.9,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 72.4,
+        "score": 64.8,
         "rating": "greed"
       },
       {
         "name": "Stock Price Strength",
-        "score": 1.6,
+        "score": 1.8,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 2,
+        "score": 2.4,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 34,
+        "score": 31,
         "rating": "fear"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 95,
+        "score": 93,
         "rating": "extreme greed"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 76.8,
-        "rating": "extreme greed"
+        "score": 70.2,
+        "rating": "greed"
       }
     ],
     "history": [
-      {
-        "date": "2026-06-01",
-        "score": 59.5,
-        "rating": "greed"
-      },
       {
         "date": "2026-06-02",
         "score": 57.0,
@@ -488,13 +483,18 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-10-06",
-        "score": 47.4,
+        "score": 46.8,
         "rating": "neutral"
       },
       {
-        "date": "2026-10-06",
-        "score": 47.4,
-        "rating": "neutral"
+        "date": "2026-10-07",
+        "score": 44.7,
+        "rating": "fear"
+      },
+      {
+        "date": "2026-10-07",
+        "score": 44.7,
+        "rating": "fear"
       }
     ]
   },
