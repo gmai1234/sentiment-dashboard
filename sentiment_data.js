@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-10-09T02:42:21Z",
+  "updated": "2026-10-09T17:16:25Z",
   "fear_greed": {
-    "score": 38.1,
-    "rating": "fear",
-    "timestamp": "2026-10-08T23:59:44+00:00",
-    "previous_close": 44.5,
-    "previous_1_week": 29.0,
-    "previous_1_month": 39.1,
-    "previous_1_year": 52.9,
+    "score": 45.0,
+    "rating": "neutral",
+    "timestamp": "2026-10-09T17:13:58+00:00",
+    "previous_close": 37.9,
+    "previous_1_week": 40.0,
+    "previous_1_month": 38.2,
+    "previous_1_year": 48.6,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 49.8,
-        "rating": "neutral"
+        "score": 71.6,
+        "rating": "greed"
       },
       {
         "name": "Stock Price Strength",
-        "score": 2.6,
+        "score": 6,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 2.8,
+        "score": 3.2,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 31,
+        "score": 37.6,
         "rating": "fear"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 84,
+        "score": 86,
         "rating": "extreme greed"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 46.4,
-        "rating": "neutral"
+        "score": 61.2,
+        "rating": "greed"
       }
     ],
     "history": [
-      {
-        "date": "2026-06-03",
-        "score": 54.6,
-        "rating": "neutral"
-      },
       {
         "date": "2026-06-04",
         "score": 54.6,
@@ -488,13 +483,18 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-10-08",
-        "score": 38.1,
+        "score": 39.8,
         "rating": "fear"
       },
       {
-        "date": "2026-10-08",
-        "score": 38.1,
-        "rating": "fear"
+        "date": "2026-10-09",
+        "score": 45.1,
+        "rating": "neutral"
+      },
+      {
+        "date": "2026-10-09",
+        "score": 45.0,
+        "rating": "neutral"
       }
     ]
   },
