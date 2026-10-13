@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-10-13T03:19:10Z",
+  "updated": "2026-10-13T17:54:36Z",
   "fear_greed": {
-    "score": 45.7,
-    "rating": "neutral",
-    "timestamp": "2026-10-12T23:59:52+00:00",
-    "previous_close": 45.0,
-    "previous_1_week": 43.7,
+    "score": 44.2,
+    "rating": "fear",
+    "timestamp": "2026-10-13T17:50:47+00:00",
+    "previous_close": 45.7,
+    "previous_1_week": 46.8,
     "previous_1_month": 32.7,
-    "previous_1_year": 30.1,
+    "previous_1_year": 29.7,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 69.8,
+        "score": 66.2,
         "rating": "greed"
       },
       {
         "name": "Stock Price Strength",
-        "score": 7.8,
+        "score": 9.6,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 4.2,
+        "score": 6,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 35.2,
+        "score": 32.8,
         "rating": "fear"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 84.6,
-        "rating": "extreme greed"
+        "score": 74.4,
+        "rating": "greed"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 68.6,
+        "score": 70.6,
         "rating": "greed"
       }
     ],
     "history": [
-      {
-        "date": "2026-06-05",
-        "score": 41.9,
-        "rating": "fear"
-      },
       {
         "date": "2026-06-08",
         "score": 39.4,
@@ -488,13 +483,18 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-10-12",
-        "score": 45.7,
+        "score": 46.3,
         "rating": "neutral"
       },
       {
-        "date": "2026-10-12",
-        "score": 45.7,
-        "rating": "neutral"
+        "date": "2026-10-13",
+        "score": 44.2,
+        "rating": "fear"
+      },
+      {
+        "date": "2026-10-13",
+        "score": 44.2,
+        "rating": "fear"
       }
     ]
   },
@@ -507,15 +507,6 @@ window.SENTIMENT_DATA = {
       "spread": 1.3
     },
     "history": [
-      {
-        "date": "2026-05-13",
-        "bullish": 39.0,
-        "neutral": 24.0,
-        "bearish": 37.0,
-        "spread": 3.0,
-        "bull_avg": 39.0,
-        "bear_avg": 37.0
-      },
       {
         "date": "2026-05-20",
         "bullish": 32.0,
