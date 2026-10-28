@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-10-28T01:59:29Z",
+  "updated": "2026-10-28T16:56:36Z",
   "fear_greed": {
-    "score": 33.6,
+    "score": 35.5,
     "rating": "fear",
-    "timestamp": "2026-10-27T23:59:39+00:00",
-    "previous_close": 27.3,
-    "previous_1_week": 28.7,
-    "previous_1_month": 36.9,
-    "previous_1_year": 37.3,
+    "timestamp": "2026-10-28T16:55:16+00:00",
+    "previous_close": 33.6,
+    "previous_1_week": 30.3,
+    "previous_1_month": 32.4,
+    "previous_1_year": 39.3,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 36.4,
+        "score": 40.8,
         "rating": "fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 28,
+        "score": 30,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 27.8,
+        "score": 29.6,
         "rating": "fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 28.6,
+        "score": 26.2,
         "rating": "fear"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 49.8,
+        "score": 54,
         "rating": "neutral"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 14.6,
+        "score": 17.2,
         "rating": "extreme fear"
       }
     ],
     "history": [
-      {
-        "date": "2026-06-23",
-        "score": 28.5,
-        "rating": "fear"
-      },
       {
         "date": "2026-06-24",
         "score": 26.5,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-10-27",
-        "score": 33.6,
+        "score": 32.9,
         "rating": "fear"
       },
       {
-        "date": "2026-10-27",
-        "score": 33.6,
+        "date": "2026-10-28",
+        "score": 35.3,
+        "rating": "fear"
+      },
+      {
+        "date": "2026-10-28",
+        "score": 35.4,
         "rating": "fear"
       }
     ]
