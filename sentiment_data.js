@@ -1,56 +1,51 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-11-04T02:51:47Z",
+  "updated": "2026-11-04T18:23:41Z",
   "fear_greed": {
-    "score": 19.1,
-    "rating": "extreme fear",
-    "timestamp": "2026-11-03T23:59:48+00:00",
-    "previous_close": 22.7,
-    "previous_1_week": 32.9,
+    "score": 27.9,
+    "rating": "fear",
+    "timestamp": "2026-11-04T17:31:53+00:00",
+    "previous_close": 19.1,
+    "previous_1_week": 34.4,
     "previous_1_month": 38.2,
-    "previous_1_year": 32.6,
+    "previous_1_year": 20.9,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 14.2,
-        "rating": "extreme fear"
+        "score": 33,
+        "rating": "fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 34.6,
+        "score": 39.4,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 42,
-        "rating": "fear"
+        "score": 45.4,
+        "rating": "neutral"
       },
       {
         "name": "Put/Call Options",
-        "score": 18,
+        "score": 18.8,
         "rating": "extreme fear"
       },
       {
         "name": "Market Volatility (VIX)",
-        "score": 18.84,
-        "rating": "extreme fear"
+        "score": 50,
+        "rating": "neutral"
       },
       {
         "name": "Junk Bond Demand",
-        "score": 2,
+        "score": 2.6,
         "rating": "extreme fear"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 4,
+        "score": 10,
         "rating": "extreme fear"
       }
     ],
     "history": [
-      {
-        "date": "2026-06-30",
-        "score": 30.0,
-        "rating": "fear"
-      },
       {
         "date": "2026-07-01",
         "score": 31.6,
@@ -488,13 +483,18 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-11-03",
-        "score": 19.1,
+        "score": 23.5,
         "rating": "extreme fear"
       },
       {
-        "date": "2026-11-03",
-        "score": 19.1,
-        "rating": "extreme fear"
+        "date": "2026-11-04",
+        "score": 28.5,
+        "rating": "fear"
+      },
+      {
+        "date": "2026-11-04",
+        "score": 28.5,
+        "rating": "fear"
       }
     ]
   },
