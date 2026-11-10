@@ -1,9 +1,9 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-11-09T21:15:43Z",
+  "updated": "2026-11-10T04:28:04Z",
   "fear_greed": {
     "score": 31.7,
     "rating": "fear",
-    "timestamp": "2026-11-09T20:13:22+00:00",
+    "timestamp": "2026-11-09T23:59:52+00:00",
     "previous_close": 22.1,
     "previous_1_week": 19.4,
     "previous_1_month": 43.5,
@@ -36,7 +36,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 41.2,
+        "score": 42.4,
         "rating": "fear"
       },
       {
@@ -488,12 +488,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-11-09",
-        "score": 31.6,
+        "score": 31.7,
         "rating": "fear"
       },
       {
         "date": "2026-11-09",
-        "score": 31.5,
+        "score": 31.7,
         "rating": "fear"
       }
     ]
