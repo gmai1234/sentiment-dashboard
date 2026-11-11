@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-11-11T02:28:51Z",
+  "updated": "2026-11-11T18:18:22Z",
   "fear_greed": {
-    "score": 33.5,
+    "score": 37.9,
     "rating": "fear",
-    "timestamp": "2026-11-10T23:59:51+00:00",
-    "previous_close": 31.7,
-    "previous_1_week": 23.5,
+    "timestamp": "2026-11-11T18:15:21+00:00",
+    "previous_close": 33.5,
+    "previous_1_week": 34.2,
     "previous_1_month": 43.5,
-    "previous_1_year": 29.9,
+    "previous_1_year": 30.5,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 13.2,
+        "score": 18,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 47.6,
+        "score": 50.8,
         "rating": "neutral"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 50.2,
+        "score": 54,
         "rating": "neutral"
       },
       {
         "name": "Put/Call Options",
-        "score": 16.2,
+        "score": 22,
         "rating": "extreme fear"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 46.4,
+        "score": 51.8,
         "rating": "neutral"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 10.6,
+        "score": 18.8,
         "rating": "extreme fear"
       }
     ],
     "history": [
-      {
-        "date": "2026-07-08",
-        "score": 38.6,
-        "rating": "fear"
-      },
       {
         "date": "2026-07-09",
         "score": 44.7,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-11-10",
-        "score": 33.5,
+        "score": 37.4,
         "rating": "fear"
       },
       {
-        "date": "2026-11-10",
-        "score": 33.5,
+        "date": "2026-11-11",
+        "score": 37.9,
+        "rating": "fear"
+      },
+      {
+        "date": "2026-11-11",
+        "score": 37.9,
         "rating": "fear"
       }
     ]
