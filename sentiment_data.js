@@ -1,32 +1,32 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-11-13T03:05:32Z",
+  "updated": "2026-11-13T18:20:34Z",
   "fear_greed": {
-    "score": 39.9,
+    "score": 37.9,
     "rating": "fear",
-    "timestamp": "2026-11-12T23:59:58+00:00",
-    "previous_close": 37.0,
-    "previous_1_week": 20.0,
-    "previous_1_month": 45.2,
-    "previous_1_year": 34.6,
+    "timestamp": "2026-11-13T18:19:01+00:00",
+    "previous_close": 39.8,
+    "previous_1_week": 24.4,
+    "previous_1_month": 45.6,
+    "previous_1_year": 24.5,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 16,
+        "score": 13.6,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 48.8,
+        "score": 46.2,
         "rating": "neutral"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 51.2,
+        "score": 51,
         "rating": "neutral"
       },
       {
         "name": "Put/Call Options",
-        "score": 26.2,
+        "score": 25.2,
         "rating": "fear"
       },
       {
@@ -36,21 +36,16 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Junk Bond Demand",
-        "score": 58,
+        "score": 61,
         "rating": "greed"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 29.2,
-        "rating": "fear"
+        "score": 18.8,
+        "rating": "extreme fear"
       }
     ],
     "history": [
-      {
-        "date": "2026-07-10",
-        "score": 46.8,
-        "rating": "neutral"
-      },
       {
         "date": "2026-07-13",
         "score": 40.9,
@@ -488,12 +483,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-11-12",
-        "score": 39.9,
+        "score": 40.3,
         "rating": "fear"
       },
       {
-        "date": "2026-11-12",
-        "score": 39.9,
+        "date": "2026-11-13",
+        "score": 38.0,
+        "rating": "fear"
+      },
+      {
+        "date": "2026-11-13",
+        "score": 37.9,
         "rating": "fear"
       }
     ]
