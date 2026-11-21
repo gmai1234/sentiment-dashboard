@@ -1,9 +1,9 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-11-20T18:56:25Z",
+  "updated": "2026-11-21T03:43:09Z",
   "fear_greed": {
-    "score": 11.3,
+    "score": 9.7,
     "rating": "extreme fear",
-    "timestamp": "2026-11-20T18:55:03+00:00",
+    "timestamp": "2026-11-20T23:59:52+00:00",
     "previous_close": 18.7,
     "previous_1_week": 37.4,
     "previous_1_month": 28.7,
@@ -11,37 +11,37 @@ window.SENTIMENT_DATA = {
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
-        "score": 0.6,
+        "score": 0.2,
         "rating": "extreme fear"
       },
       {
         "name": "Stock Price Strength",
-        "score": 28.8,
+        "score": 27.2,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 21,
+        "score": 20,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 2.4,
+        "score": 2,
         "rating": "extreme fear"
       },
       {
         "name": "Market Volatility (VIX)",
-        "score": 3.29,
+        "score": 1.32,
         "rating": "extreme fear"
       },
       {
         "name": "Junk Bond Demand",
-        "score": 21.4,
+        "score": 16.2,
         "rating": "extreme fear"
       },
       {
         "name": "Safe Haven Demand",
-        "score": 1.8,
+        "score": 0.8,
         "rating": "extreme fear"
       }
     ],
@@ -488,12 +488,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-11-20",
-        "score": 11.3,
+        "score": 9.7,
         "rating": "extreme fear"
       },
       {
         "date": "2026-11-20",
-        "score": 11.3,
+        "score": 9.7,
         "rating": "extreme fear"
       }
     ]
