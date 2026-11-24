@@ -1,13 +1,13 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-11-23T22:25:06Z",
+  "updated": "2026-11-24T06:41:51Z",
   "fear_greed": {
     "score": 17.0,
     "rating": "extreme fear",
-    "timestamp": "2026-11-23T22:08:37+00:00",
-    "previous_close": 9.7,
-    "previous_1_week": 31.1,
+    "timestamp": "2026-11-24T01:00:00+00:00",
+    "previous_close": 17.0,
+    "previous_1_week": 26.0,
     "previous_1_month": 16.7,
-    "previous_1_year": 5.7,
+    "previous_1_year": 13.7,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
@@ -46,11 +46,6 @@ window.SENTIMENT_DATA = {
       }
     ],
     "history": [
-      {
-        "date": "2026-07-21",
-        "score": 42.8,
-        "rating": "fear"
-      },
       {
         "date": "2026-07-22",
         "score": 44.4,
@@ -492,7 +487,12 @@ window.SENTIMENT_DATA = {
         "rating": "extreme fear"
       },
       {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
+        "score": 17.0,
+        "rating": "extreme fear"
+      },
+      {
+        "date": "2026-11-24",
         "score": 17.0,
         "rating": "extreme fear"
       }
@@ -507,15 +507,6 @@ window.SENTIMENT_DATA = {
       "spread": -8.9
     },
     "history": [
-      {
-        "date": "2026-06-24",
-        "bullish": 45.0,
-        "neutral": 19.0,
-        "bearish": 36.0,
-        "spread": 9.0,
-        "bull_avg": 45.0,
-        "bear_avg": 36.0
-      },
       {
         "date": "2026-07-01",
         "bullish": 31.0,
