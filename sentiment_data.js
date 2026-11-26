@@ -1,9 +1,9 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-11-25T20:20:30Z",
+  "updated": "2026-11-26T04:39:56Z",
   "fear_greed": {
-    "score": 15.8,
+    "score": 15.2,
     "rating": "extreme fear",
-    "timestamp": "2026-11-25T20:16:50+00:00",
+    "timestamp": "2026-11-25T23:59:57+00:00",
     "previous_close": 17.4,
     "previous_1_week": 29.9,
     "previous_1_month": 16.7,
@@ -21,17 +21,17 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Stock Price Breadth",
-        "score": 17.8,
+        "score": 17.2,
         "rating": "extreme fear"
       },
       {
         "name": "Put/Call Options",
-        "score": 7.6,
+        "score": 7,
         "rating": "extreme fear"
       },
       {
         "name": "Market Volatility (VIX)",
-        "score": 36.71,
+        "score": 34.18,
         "rating": "fear"
       },
       {
@@ -41,7 +41,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Safe Haven Demand",
-        "score": 4.6,
+        "score": 5.2,
         "rating": "extreme fear"
       }
     ],
@@ -488,12 +488,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-11-25",
-        "score": 15.7,
+        "score": 15.2,
         "rating": "extreme fear"
       },
       {
         "date": "2026-11-25",
-        "score": 15.6,
+        "score": 15.2,
         "rating": "extreme fear"
       }
     ]
