@@ -1,13 +1,13 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-11-26T04:39:56Z",
+  "updated": "2026-11-26T19:57:13Z",
   "fear_greed": {
-    "score": 15.2,
+    "score": 15.0,
     "rating": "extreme fear",
-    "timestamp": "2026-11-25T23:59:57+00:00",
-    "previous_close": 17.4,
-    "previous_1_week": 29.9,
-    "previous_1_month": 16.7,
-    "previous_1_year": 15.0,
+    "timestamp": "2026-11-26T01:59:59+00:00",
+    "previous_close": 15.2,
+    "previous_1_week": 15.9,
+    "previous_1_month": 29.8,
+    "previous_1_year": 17.7,
     "sub_indicators": [
       {
         "name": "Market Momentum (S&P 500)",
@@ -16,12 +16,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Stock Price Strength",
-        "score": 27.2,
+        "score": 25.6,
         "rating": "fear"
       },
       {
         "name": "Stock Price Breadth",
-        "score": 17.2,
+        "score": 21.4,
         "rating": "extreme fear"
       },
       {
@@ -46,11 +46,6 @@ window.SENTIMENT_DATA = {
       }
     ],
     "history": [
-      {
-        "date": "2026-07-23",
-        "score": 40.9,
-        "rating": "fear"
-      },
       {
         "date": "2026-07-24",
         "score": 40.8,
@@ -488,23 +483,28 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-11-25",
-        "score": 15.2,
+        "score": 15.6,
         "rating": "extreme fear"
       },
       {
-        "date": "2026-11-25",
-        "score": 15.2,
+        "date": "2026-11-26",
+        "score": 15.6,
+        "rating": "extreme fear"
+      },
+      {
+        "date": "2026-11-26",
+        "score": 15.0,
         "rating": "extreme fear"
       }
     ]
   },
   "aaii": {
     "latest": {
-      "date": "2026-11-18",
-      "bullish": 33.3,
-      "neutral": 24.4,
-      "bearish": 42.2,
-      "spread": -8.9
+      "date": "2026-11-25",
+      "bullish": 37.1,
+      "neutral": 17.5,
+      "bearish": 45.4,
+      "spread": -8.3
     },
     "history": [
       {
@@ -695,6 +695,15 @@ window.SENTIMENT_DATA = {
         "spread": -9.0,
         "bull_avg": 33.0,
         "bear_avg": 42.0
+      },
+      {
+        "date": "2026-11-25",
+        "bullish": 37.0,
+        "neutral": 18.0,
+        "bearish": 45.0,
+        "spread": -8.0,
+        "bull_avg": 37.0,
+        "bear_avg": 45.0
       }
     ]
   },
