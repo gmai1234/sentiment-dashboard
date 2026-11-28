@@ -1,9 +1,9 @@
 window.SENTIMENT_DATA = {
-  "updated": "2026-11-27T19:45:55Z",
+  "updated": "2026-11-28T04:28:10Z",
   "fear_greed": {
-    "score": 24.8,
+    "score": 24.9,
     "rating": "extreme fear",
-    "timestamp": "2026-11-27T19:30:58+00:00",
+    "timestamp": "2026-11-27T23:59:59+00:00",
     "previous_close": 15.6,
     "previous_1_week": 18.6,
     "previous_1_month": 32.9,
@@ -41,7 +41,7 @@ window.SENTIMENT_DATA = {
       },
       {
         "name": "Safe Haven Demand",
-        "score": 19,
+        "score": 19.4,
         "rating": "extreme fear"
       }
     ],
@@ -488,12 +488,12 @@ window.SENTIMENT_DATA = {
       },
       {
         "date": "2026-11-27",
-        "score": 24.8,
+        "score": 24.9,
         "rating": "extreme fear"
       },
       {
         "date": "2026-11-27",
-        "score": 24.8,
+        "score": 24.9,
         "rating": "extreme fear"
       }
     ]
